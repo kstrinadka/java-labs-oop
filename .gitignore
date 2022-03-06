@@ -81,6 +81,8 @@ fabric.properties
 
 .idea/
 
+*.csv
+
 ### C++ ###
 # Prerequisites
 *.d
