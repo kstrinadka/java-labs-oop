@@ -1,28 +1,31 @@
 package com.StrinadkaKirill.javalabs.lab1;
 
-// возможно сделать статическим, чтобы он сразу в Counter передавал считанный вектор
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+/**
+ * MyReader reads input file by words and save theirs to output ArrayList
+ */
 public class MyReader {
 
 
+    static ArrayList<String> openAndReadFromFile (String fileName) throws FileNotFoundException {
 
+        ArrayList<String> list = new ArrayList<>();
 
-    static boolean openAndReadFromFile (String fileName, ArrayList<String> list) throws FileNotFoundException {
+        final String pathToFIle =
+                String.format("out\\production\\lab1\\com\\StrinadkaKirill\\javalabs\\lab1\\%s", fileName);
 
-        boolean readSuccessfully = false;
-
-        File file = new File("out\\production\\lab1\\com\\StrinadkaKirill\\javalabs\\lab1\\input.txt");
+        File file = new File(pathToFIle);
         Scanner input = new Scanner(file);
 
         readInputFile(list, input);
 
-        return readSuccessfully;
+        return list;
     }
-
 
 
     static void readInputFile(ArrayList<String> list, Scanner input){
@@ -30,6 +33,5 @@ public class MyReader {
             list.add(input.next());
         }
     }
-
 
 }
