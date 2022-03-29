@@ -31,9 +31,7 @@ public class MyExecutor {
     public static ArrayList<String> createReader (String INPUT_FILE_NAME) {
 
         AbstractReader reader = null;
-
         final String readerName;
-
         ArrayList<String> listOfInput = null;
 
         if (INPUT_FILE_NAME == null) {
@@ -50,6 +48,7 @@ public class MyExecutor {
         catch (ClassNotFoundException | InstantiationException | NoSuchMethodException | InvocationTargetException |
                 IllegalAccessException e) {
             e.printStackTrace();
+            return null;
         }
 
         try {

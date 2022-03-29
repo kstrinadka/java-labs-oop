@@ -18,19 +18,17 @@ public class MainClass {
 
     public static void main(String[] args) throws IOException {
 
-
         final String INPUT_FILE_NAME;
-
-
+        
         try {
             if (args.length == 1) {
                 INPUT_FILE_NAME = args[0];
 
-                System.out.println("input from file\n");
+                System.out.println("input from file\n");        //delete
             } else if (args.length == 0) {
                 INPUT_FILE_NAME = null;
 
-                System.out.println("std console input\n");
+                System.out.println("std console input\n");      //delete
             } else {
                 throw new IllegalArgumentException("bad number of args");
             }
@@ -40,25 +38,19 @@ public class MainClass {
         }
 
 
-
-        //конкретный reader создается в зависимости от условия
-
-        Data data = new Data();
-        //AbstractReader reader = new instace of concrete Reader(INPUT_FILE_NAME);
-
-        //data = reader.read;
-
-
+        //here we are getting input from required reader
         ArrayList<String> listOfInput = MyExecutor.createReader(INPUT_FILE_NAME);
+        if (listOfInput == null) {
+            System.out.println("smth wrong with input\n");
+            return;
+        }
+
 
         if (listOfInput != null) {
             for (String str: listOfInput) {
                 System.out.println(str);
             }
         }
-
-
-
 
 
 
