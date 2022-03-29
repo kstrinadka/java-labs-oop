@@ -19,7 +19,7 @@ public class MainClass {
     public static void main(String[] args) throws IOException {
 
         final String INPUT_FILE_NAME;
-        
+
         try {
             if (args.length == 1) {
                 INPUT_FILE_NAME = args[0];

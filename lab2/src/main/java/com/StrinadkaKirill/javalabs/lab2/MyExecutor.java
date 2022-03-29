@@ -10,6 +10,7 @@ import com.StrinadkaKirill.javalabs.lab2.Reader.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class MyExecutor {
 
@@ -19,14 +20,22 @@ public class MyExecutor {
 
     String inputFileName;
 
+    //stack for calculator
     ArrayList<String> stack;
+
+    //here will be variables that defining in executing
+    TreeMap<String, Double> defineVariables;
+
+
 
 
     public MyExecutor(String fileName) {
 
         this.inputFileName = fileName;
+        this.defineVariables = new TreeMap<>();
 
     }
+
 
     public static ArrayList<String> createReader (String INPUT_FILE_NAME) {
 
@@ -61,5 +70,9 @@ public class MyExecutor {
 
         return listOfInput;
     }
+
+
+    //тут должен быть метод, который как конвейер создает нужные классы
+
 
 }
