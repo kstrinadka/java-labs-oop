@@ -1,16 +1,9 @@
 package com.StrinadkaKirill.javalabs.lab2;
 
-import com.StrinadkaKirill.javalabs.lab2.Reader.AbstractReader;
-import com.StrinadkaKirill.javalabs.lab2.Reader.ConsoleReader;
-import com.StrinadkaKirill.javalabs.lab2.Reader.FileReader;
+import com.StrinadkaKirill.javalabs.lab2.data.Data;
+import com.StrinadkaKirill.javalabs.lab2.myCommand.*;
 
-import javax.print.DocFlavor;
-import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class MainClass {
@@ -53,8 +46,25 @@ public class MainClass {
         }
 
 
+        //создается список Data из входящих данных
+        ArrayList<Data> dataArrayList = new ArrayList<>();
+        for (String str: listOfInput) {
+            dataArrayList.add(new Data(str));
+        }
+
+        /*//это просто вывод для проверки, потом удалить
+        for (Data data: dataArrayList) {
+            System.out.println(data);
+        }*/
 
 
+
+        MyExecutor executor = new MyExecutor(INPUT_FILE_NAME, "outputfilename", dataArrayList);
+
+        System.out.println("\nhere\n");
+
+        executor.createCommandMap();
+        executor.printCommandMap();
     }
 
 }

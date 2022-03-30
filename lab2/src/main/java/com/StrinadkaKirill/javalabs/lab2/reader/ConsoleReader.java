@@ -1,4 +1,4 @@
-package com.StrinadkaKirill.javalabs.lab2.Reader;
+package com.StrinadkaKirill.javalabs.lab2.reader;
 
 import java.io.BufferedReader;
 import java.io.IOException;
