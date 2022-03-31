@@ -38,7 +38,7 @@ public abstract class AbstractCommand {
     protected double checkNumerOrVariable(String variable) {
 
         double number1;
-        boolean numeric = true;
+        boolean numeric;
         numeric = variable.matches("-?\\d+(\\.\\d+)?");
 
         if(numeric){

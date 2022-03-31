@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class Data {
 
     private final String typeOfOperation;
-    private ArrayList<String> arguments;
+    private final ArrayList<String> arguments;
 
 
     //тут обычная строка со входа превращается в разделенную на тип команды и аргументы
@@ -40,7 +40,7 @@ public class Data {
     private ArrayList<String> converteStringToList(String str) {
 
         String[] strSplit = str.split("\\W+");
-        ArrayList<String> arguments = new ArrayList<String>(Arrays.asList(strSplit));
+        ArrayList<String> arguments = new ArrayList<>(Arrays.asList(strSplit));
 
         if (arguments.size() > 1) {
             arguments.remove(0);
@@ -55,7 +55,7 @@ public class Data {
 
         //возможно потом поменять регулярку на более общий разделитьель
         String[] strSplit = str.split(" ");
-        ArrayList<String> arguments = new ArrayList<String>(Arrays.asList(strSplit));
+        ArrayList<String> arguments = new ArrayList<>(Arrays.asList(strSplit));
 
         String strType = arguments.get(0);
 

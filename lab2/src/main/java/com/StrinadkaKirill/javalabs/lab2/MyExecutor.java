@@ -1,8 +1,6 @@
 package com.StrinadkaKirill.javalabs.lab2;
 
 
-//внутри будет калькулятор, reader, фабрика
-
 import com.StrinadkaKirill.javalabs.lab2.data.Data;
 import com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand;
 import com.StrinadkaKirill.javalabs.lab2.reader.MyAbstractReader;
@@ -19,21 +17,17 @@ import java.util.TreeMap;
 
 public class MyExecutor {
 
-    //Calculator calculator;
 
-    //MyReader myReader;
 
-    private String inputFileName;
-
-    private String outputFileName;
+    private final String outputFileName;
 
     //stack for calculator
-    private ArrayList<String> stack;
+    private final ArrayList<String> stack;
 
     //here will be variables that defining in executing
-    private TreeMap<String, Double> defineVariables;
+    private final TreeMap<String, Double> defineVariables;
 
-    private MyContext context;
+    private final MyContext context;
 
     //here data from input
     private final ArrayList<Data> dataArrayList;
@@ -44,27 +38,18 @@ public class MyExecutor {
 
 
 
-    public MyExecutor(String inputFileName, String outputFileName, ArrayList<Data> dataArrayList) {
-        this.inputFileName = inputFileName;
+    public MyExecutor(String outputFileName, ArrayList<Data> dataArrayList) {
         this.outputFileName = outputFileName;
         this.dataArrayList = dataArrayList;
         this.defineVariables = new TreeMap<>();
         this.stack = new ArrayList<>();
-        if (inputFileName == null && outputFileName == null) {
-            this.context = new MyContext(stack, defineVariables);
-        }
-        else if (inputFileName != null && outputFileName != null) {
-            this.context = new MyContext(inputFileName, outputFileName, stack, defineVariables);
-        }
-        else {
-            System.out.println("smth wrong with input\n");
-        }
+        this.context = new MyContext(stack, defineVariables);
     }
 
 
     public static ArrayList<String> createReader (String INPUT_FILE_NAME) {
 
-        MyAbstractReader reader = null;
+        MyAbstractReader reader;
         final String readerName;
         ArrayList<String> listOfInput = null;
 
@@ -135,7 +120,7 @@ public class MyExecutor {
     //возможно нужно сделать конструктор без аргументов, а аргументы передавать в метод
     private AbstractCommand fabricMethod(Data data) {
 
-        AbstractCommand command = null;
+        AbstractCommand command;
 
         try {
             Class<?> clazz = Class.forName(data.getCommandClassName());
@@ -177,14 +162,8 @@ public class MyExecutor {
             }
         }
 
+        //Вывод результата (содержимого стека)
         createWriterAndWrite(outputFileName, stack);
-
-        //удалить потом
-        /*System.out.println("\nmy stack after executing:\n");
-
-        for (String str: stack) {
-            System.out.println(str);
-        }*/
 
     }
 

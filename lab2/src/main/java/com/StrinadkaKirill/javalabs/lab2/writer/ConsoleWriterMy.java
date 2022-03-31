@@ -1,12 +1,11 @@
 package com.StrinadkaKirill.javalabs.lab2.writer;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ConsoleWriterMy extends MyAbstractWriter {
 
     @Override
-    public void writeResult() throws IOException {
+    public void writeResult() {
 
         System.out.println("\nhere is stack after executing:");
         for (String str: stack) {

@@ -5,15 +5,11 @@ import java.util.TreeMap;
 
 public class MyContext {
 
-    private String inputFileName;
-
-    private String outputFileName;
-
     //stack for calculator
-    private ArrayList<String> stack;
+    private final ArrayList<String> stack;
 
     //here will be variables that defining in executing
-    private TreeMap<String, Double> defineVariables;
+    private final TreeMap<String, Double> defineVariables;
 
 
     //for console input
@@ -22,13 +18,6 @@ public class MyContext {
         this.defineVariables = defineVariables;
     }
 
-    //for input from file
-    public MyContext(String inputFileName, String outputFileName, ArrayList<String> stack, TreeMap<String, Double> defineVariables) {
-        this.inputFileName = inputFileName;
-        this.outputFileName = outputFileName;
-        this.stack = stack;
-        this.defineVariables = defineVariables;
-    }
 
 
     //поменять потом на свои исключения

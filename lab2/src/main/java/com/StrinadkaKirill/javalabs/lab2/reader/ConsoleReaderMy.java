@@ -23,7 +23,7 @@ public class ConsoleReaderMy extends MyAbstractReader {
                 """);
 
         String string = reader.readLine();
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
 
         while (!string.equals(".")) {
             list.add(string);

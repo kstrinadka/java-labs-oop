@@ -16,6 +16,9 @@ public class DefineCommand extends AbstractCommand {
         //проверить буква ли то, что второй аргумент
         //заменить магические числа на константы
 
+        //проверить не задефайнена ли уже эта переменная
+        //ничего страшного. Передефайнится
+
         String str = arguments.get(0);
         double value;
 

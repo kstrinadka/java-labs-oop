@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class FileReaderMy extends MyAbstractReader {
     @Override
-    public ArrayList<String> getText() throws FileNotFoundException {
+    public ArrayList<String> getText() {
 
         System.out.println("we are in file reader\n");
         ArrayList<String> list = new ArrayList<>();
