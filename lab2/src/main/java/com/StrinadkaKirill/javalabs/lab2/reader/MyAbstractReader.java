@@ -4,13 +4,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 // return Data of read text from console or from file
-public abstract class AbstractReader {
+public abstract class MyAbstractReader {
 
 
     final String fileName;
 
 
-    public AbstractReader(String fileName) {
+    public MyAbstractReader(String fileName) {
         this.fileName = fileName;
     }
 

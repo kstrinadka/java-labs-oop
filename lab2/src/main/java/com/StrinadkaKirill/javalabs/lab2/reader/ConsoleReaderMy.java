@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class ConsoleReader extends AbstractReader {
+public class ConsoleReaderMy extends MyAbstractReader {
 
 
     @Override
@@ -34,7 +34,7 @@ public class ConsoleReader extends AbstractReader {
     }
 
 
-    public ConsoleReader(String fileName) {
+    public ConsoleReaderMy(String fileName) {
         super(fileName);
     }
 }

@@ -5,9 +5,12 @@ package com.StrinadkaKirill.javalabs.lab2;
 
 import com.StrinadkaKirill.javalabs.lab2.data.Data;
 import com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand;
-import com.StrinadkaKirill.javalabs.lab2.reader.AbstractReader;
-import com.StrinadkaKirill.javalabs.lab2.reader.ConsoleReader;
-import com.StrinadkaKirill.javalabs.lab2.reader.FileReader;
+import com.StrinadkaKirill.javalabs.lab2.reader.MyAbstractReader;
+import com.StrinadkaKirill.javalabs.lab2.reader.ConsoleReaderMy;
+import com.StrinadkaKirill.javalabs.lab2.reader.FileReaderMy;
+import com.StrinadkaKirill.javalabs.lab2.writer.ConsoleWriterMy;
+import com.StrinadkaKirill.javalabs.lab2.writer.FileWriterMy;
+import com.StrinadkaKirill.javalabs.lab2.writer.MyAbstractWriter;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -61,20 +64,20 @@ public class MyExecutor {
 
     public static ArrayList<String> createReader (String INPUT_FILE_NAME) {
 
-        AbstractReader reader = null;
+        MyAbstractReader reader = null;
         final String readerName;
         ArrayList<String> listOfInput = null;
 
         if (INPUT_FILE_NAME == null) {
-            readerName = ConsoleReader.class.getName();
+            readerName = ConsoleReaderMy.class.getName();
         }
         else {
-            readerName = FileReader.class.getName();
+            readerName = FileReaderMy.class.getName();
         }
 
         try {
             Class<?> clazz = Class.forName(readerName);
-            reader = (AbstractReader) clazz.getDeclaredConstructor(String.class).newInstance(INPUT_FILE_NAME);
+            reader = (MyAbstractReader) clazz.getDeclaredConstructor(String.class).newInstance(INPUT_FILE_NAME);
         }
         catch (ClassNotFoundException | InstantiationException | NoSuchMethodException | InvocationTargetException |
                 IllegalAccessException e) {
@@ -91,6 +94,40 @@ public class MyExecutor {
         }
 
         return listOfInput;
+    }
+
+    public static void createWriterAndWrite(String OUTPUT_FILE_NAME, ArrayList<String> stack) {
+
+        MyAbstractWriter writer = null;
+        final String writerName;
+
+
+        if (OUTPUT_FILE_NAME == null) {
+            writerName = ConsoleWriterMy.class.getName();
+        }
+        else {
+            writerName = FileWriterMy.class.getName();
+        }
+
+        try {
+            Class<?> clazz = Class.forName(writerName);
+            writer = (MyAbstractWriter) clazz.getDeclaredConstructor(String.class, ArrayList.class).
+                    newInstance(OUTPUT_FILE_NAME, stack);
+        }
+        catch (ClassNotFoundException | InstantiationException | NoSuchMethodException | InvocationTargetException |
+                IllegalAccessException e) {
+            e.printStackTrace();
+            System.out.println("smth wrong with creating result Writer");
+        }
+
+        try {
+            writer.writeResult();
+        }
+        catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+            System.out.println("smth wrong with result output");
+        }
+
     }
 
 
@@ -140,13 +177,14 @@ public class MyExecutor {
             }
         }
 
+        createWriterAndWrite(outputFileName, stack);
 
         //удалить потом
-        System.out.println("\nmy stack after executing:\n");
+        /*System.out.println("\nmy stack after executing:\n");
 
         for (String str: stack) {
             System.out.println(str);
-        }
+        }*/
 
     }
 

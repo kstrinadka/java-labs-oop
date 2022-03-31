@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileReader extends AbstractReader{
+public class FileReaderMy extends MyAbstractReader {
     @Override
     public ArrayList<String> getText() throws FileNotFoundException {
 
@@ -30,7 +30,7 @@ public class FileReader extends AbstractReader{
     }
 
 
-    public FileReader(String fileName) {
+    public FileReaderMy(String fileName) {
         super(fileName);
     }
 }
