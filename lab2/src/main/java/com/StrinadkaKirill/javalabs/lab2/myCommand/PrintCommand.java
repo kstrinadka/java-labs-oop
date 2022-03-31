@@ -8,8 +8,6 @@ public class PrintCommand extends AbstractCommand{
     @Override
     public void doOperation() throws Exception {
 
-        //проверить есть ли элементы в стеке, иначе бросить ошибку
-
         System.out.println(context.peekTop());
 
     }

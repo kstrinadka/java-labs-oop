@@ -8,17 +8,12 @@ public class PopCommand extends AbstractCommand {
     @Override
     public void doOperation() throws Exception {
 
-        if (arguments.size() != 0) {
+        if (arguments != null) {
             throw new IllegalArgumentException();   //Заменить на свою ошибку
         }
 
 
-
-
-        //проверить не пустой ли стек иначе бросить ошибку
-
         context.pop();
-
     }
 
     public PopCommand(MyContext context, ArrayList<String> arguments) {

@@ -7,21 +7,17 @@ import java.util.ArrayList;
 public class SqrtCommand extends AbstractCommand{
     @Override
     public void doOperation() throws Exception {
-        if (arguments.size() != 0) {
+        if (arguments != null) {
             throw new IllegalArgumentException();   //Заменить на свою ошибку
         }
 
         String a1 = context.pop();
 
 
-        //проверить не переменнная ли a1 и a2
-
-        //
-
-        double number1 = Double.parseDouble(a1);
+        double number1 = checkNumerOrVariable(a1);
 
 
-        if (number1 >= 0.0) {
+        if (number1 < 0.0) {
             throw new Exception("negative number sqrt"); //Заменить на свою ошибку
         }
         else {

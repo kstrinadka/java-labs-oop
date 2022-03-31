@@ -32,4 +32,22 @@ public abstract class AbstractCommand {
                 ", arguments=" + arguments +
                 '}';
     }
+
+
+    //checking element from stack. Is it double or defined variable?
+    protected double checkNumerOrVariable(String variable) {
+
+        double number1;
+        boolean numeric = true;
+        numeric = variable.matches("-?\\d+(\\.\\d+)?");
+
+        if(numeric){
+            number1 = Double.parseDouble(variable);
+        }
+        else{
+            number1 = context.getDefine(variable);
+        }
+
+        return number1;
+    }
 }

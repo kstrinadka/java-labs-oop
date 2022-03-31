@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class DivideCommand extends AbstractCommand{
     @Override
     public void doOperation() throws Exception {
-        if (arguments.size() != 0) {
+        if (arguments != null) {
             throw new RuntimeException();   //Заменить на свою ошибку
         }
 
@@ -16,8 +16,8 @@ public class DivideCommand extends AbstractCommand{
 
         //проверить не переменнная ли это
 
-        double number1 = Double.parseDouble(a1);
-        double number2 = Double.parseDouble(a2);
+        double number1 = checkNumerOrVariable(a1);
+        double number2 = checkNumerOrVariable(a2);
 
         if (number2 == 0.0) {
             throw new Exception("division by zero"); //Заменить на свою ошибку

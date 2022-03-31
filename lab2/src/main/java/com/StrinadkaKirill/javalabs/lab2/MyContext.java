@@ -39,7 +39,7 @@ public class MyContext {
             return element;
         }
         else {
-            Exception exception = new Exception();
+            Exception exception = new Exception("trying to get element from empty stack");      //заменить на свой exception
             throw exception;
         }
     }
@@ -50,7 +50,7 @@ public class MyContext {
             return element;
         }
         else {
-            Exception exception = new Exception();
+            Exception exception = new Exception("trying to get element from empty stack");
             throw exception;
         }
     }
@@ -63,8 +63,25 @@ public class MyContext {
         defineVariables.put(key, value);
     }
 
-    public double getDefine(String name) {
-        return defineVariables.get(name);
+    public boolean containsVariable(String key) {
+        return defineVariables.containsKey(key);
+    }
+
+    public double getDefine(String key) {
+
+        //проверить есть ли вообще такое значение, иначе бросить ошибку
+        try {
+            if (defineVariables == null) {
+                throw new Exception("map is not available");
+            }
+            if (!defineVariables.containsKey(key)) {
+                throw new Exception("can't find specified key in map");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return defineVariables.get(key);
     }
 
 

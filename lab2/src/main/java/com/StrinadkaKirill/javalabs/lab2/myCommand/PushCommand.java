@@ -8,14 +8,11 @@ public class PushCommand extends AbstractCommand{
     @Override
     public void doOperation() throws Exception {
 
-
         if (arguments.size() != 1) {
             throw new IllegalArgumentException();   //Заменить на свою ошибку
         }
 
         String a1 = arguments.get(0);
-
-        //проверить число это или есть ли такая переменная в мапе
 
         context.push(a1);
 

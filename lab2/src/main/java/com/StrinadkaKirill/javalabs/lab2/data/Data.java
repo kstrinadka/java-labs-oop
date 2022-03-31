@@ -53,12 +53,15 @@ public class Data {
 
     private String getOperationNameFromString(String str) {
 
-        String[] strSplit = str.split("\\W+");
+        //возможно потом поменять регулярку на более общий разделитьель
+        String[] strSplit = str.split(" ");
         ArrayList<String> arguments = new ArrayList<String>(Arrays.asList(strSplit));
 
         String strType = arguments.get(0);
 
+
         return switch (strType) {
+            case "" -> CommentCommand.class.getName();          //empty strings will be like comments
             case "#" -> CommentCommand.class.getName();
             case "/" -> DivideCommand.class.getName();
             case "*" -> MultiplyCommand.class.getName();
@@ -69,6 +72,8 @@ public class Data {
             case "SQRT" -> SqrtCommand.class.getName();
             case "PRINT" -> PrintCommand.class.getName();
             case "DEFINE" -> DefineCommand.class.getName();
+
+            //возможно тут надо кидать ошибку с неправильным названием команды
             default -> null;
         };
 

@@ -8,17 +8,16 @@ public class SubCommand extends AbstractCommand {
     @Override
     public void doOperation() throws Exception {
 
-        if (arguments.size() != 0) {
+        if (arguments != null) {
             throw new IllegalArgumentException();   //Заменить на свою ошибку
         }
 
         String a1 = context.pop();
         String a2 = context.pop();
 
-        //проверить не переменнная ли a1 и a2
 
-        double number1 = Double.parseDouble(a1);
-        double number2 = Double.parseDouble(a2);
+        double number1 = checkNumerOrVariable(a1);
+        double number2 = checkNumerOrVariable(a2);
 
         String result = String.valueOf(number1 - number2);
         context.push(result);

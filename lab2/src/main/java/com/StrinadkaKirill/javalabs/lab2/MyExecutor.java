@@ -123,7 +123,32 @@ public class MyExecutor {
         }
     }
 
-    
+
+    public void executeCalculator () {
+
+        //потом удалить
+        System.out.println("\nstarting executing...\n");
+
+        for (Data data: dataArrayList) {
+            //createdCommandMap.put(data.getCommandClassName(), fabricMethod(data));
+
+            AbstractCommand command = fabricMethod(data);
+            try {
+                command.doOperation();
+            } catch (Exception e) {
+                e.printStackTrace();            // поменять ошибку, мб по-другому отловить
+            }
+        }
+
+
+        //удалить потом
+        System.out.println("\nmy stack after executing:\n");
+
+        for (String str: stack) {
+            System.out.println(str);
+        }
+
+    }
 
     public void printCommandMap() {
         createdCommandMap.forEach((key, value) -> System.out.println(/*key + ":" + */value));
