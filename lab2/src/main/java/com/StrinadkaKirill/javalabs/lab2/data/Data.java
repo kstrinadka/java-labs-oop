@@ -1,6 +1,7 @@
 package com.StrinadkaKirill.javalabs.lab2.data;
 
 
+//import com.StrinadkaKirill.javalabs.lab2.data.myCommand.*;
 import com.StrinadkaKirill.javalabs.lab2.myCommand.*;
 
 import java.io.IOException;
@@ -18,9 +19,10 @@ public class Data {
 
         this.arguments = converteStringToList(str);
         this.typeOfOperation = getOperationNameFromString(str);
+
         if (this.typeOfOperation == null) {
-            System.out.println("smth wrong with operation type");
-            throw new IOException();
+            System.out.println();
+            throw new IOException("smth wrong with operation type in Data constructor");
         }
 
 

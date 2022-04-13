@@ -1,14 +1,16 @@
 package com.StrinadkaKirill.javalabs.lab2.myCommand;
 
 import com.StrinadkaKirill.javalabs.lab2.MyContext;
+import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
+import com.StrinadkaKirill.javalabs.lab2.myExceptions.commandException.SqrtException;
 
 import java.util.ArrayList;
 
 public class SqrtCommand extends AbstractCommand{
     @Override
-    public void doOperation() throws Exception {
+    public void doOperation() throws RuntimeException {
         if (arguments != null) {
-            throw new IllegalArgumentException();   //Заменить на свою ошибку
+            throw new ArgsAmountException("bad number of args in SqrtCommand: " + context.toString());
         }
 
         String a1 = context.pop();
@@ -18,7 +20,7 @@ public class SqrtCommand extends AbstractCommand{
 
 
         if (number1 < 0.0) {
-            throw new Exception("negative number sqrt"); //Заменить на свою ошибку
+            throw new SqrtException("negative number sqrt: " + context.toString());
         }
         else {
             number1 = Math.sqrt(number1);

@@ -22,7 +22,7 @@ public abstract class AbstractCommand {
 
 
     //this is operation that can do each command
-    public abstract void doOperation() throws Exception;
+    public abstract void doOperation() throws RuntimeException;
 
 
     @Override

@@ -1,5 +1,7 @@
 package com.StrinadkaKirill.javalabs.lab2;
 
+import com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException;
+
 import java.util.ArrayList;
 import java.util.TreeMap;
 
@@ -21,25 +23,25 @@ public class MyContext {
 
 
     //поменять потом на свои исключения
-    public String pop() throws Exception {
+    public String pop() throws StackException {
         if (stack != null && !stack.isEmpty()) {
             String element = stack.get(stack.size()-1);
             stack.remove(stack.size()-1);
             return element;
         }
         else {
-            Exception exception = new Exception("trying to get element from empty stack");      //заменить на свой exception
+            StackException exception = new StackException("trying to get element from empty stack");      //заменить на свой exception
             throw exception;
         }
     }
 
-    public String peekTop() throws Exception {
+    public String peekTop() throws StackException {
         if (stack != null && !stack.isEmpty()) {
             String element = stack.get(stack.size()-1);
             return element;
         }
         else {
-            Exception exception = new Exception("trying to get element from empty stack");
+            StackException exception = new StackException("trying to get element from empty stack");
             throw exception;
         }
     }

@@ -1,14 +1,16 @@
 package com.StrinadkaKirill.javalabs.lab2.myCommand;
 
 import com.StrinadkaKirill.javalabs.lab2.MyContext;
+import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
+import com.StrinadkaKirill.javalabs.lab2.myExceptions.commandException.DefineException;
 
 import java.util.ArrayList;
 
 public class DefineCommand extends AbstractCommand {
     @Override
-    public void doOperation() throws Exception {
+    public void doOperation() throws  RuntimeException{
         if (arguments.size() != 2) {
-            throw new IllegalArgumentException("pop");   //Заменить на свою ошибку
+            throw new ArgsAmountException("pop");   //Заменить на свою ошибку
         }
 
 
@@ -26,8 +28,8 @@ public class DefineCommand extends AbstractCommand {
             value = checkNumerOrVariable(arguments.get(1));
         }
         else {
-            System.out.println("defining variables must start from letter");
-            throw new Exception("incorrect name of defining variable");
+            //System.out.println("defining variables must start from letter");
+            throw new DefineException("incorrect name of defining variable" + context.toString());
         }
 
 

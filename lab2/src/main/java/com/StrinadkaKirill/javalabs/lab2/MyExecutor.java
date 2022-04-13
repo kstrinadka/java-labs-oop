@@ -3,6 +3,8 @@ package com.StrinadkaKirill.javalabs.lab2;
 
 import com.StrinadkaKirill.javalabs.lab2.data.Data;
 import com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand;
+import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
+import com.StrinadkaKirill.javalabs.lab2.myExceptions.commandException.CommandExecutingException;
 import com.StrinadkaKirill.javalabs.lab2.reader.MyAbstractReader;
 import com.StrinadkaKirill.javalabs.lab2.reader.ConsoleReaderMy;
 import com.StrinadkaKirill.javalabs.lab2.reader.FileReaderMy;
@@ -146,7 +148,7 @@ public class MyExecutor {
     }
 
 
-    public void executeCalculator () {
+    public void executeCalculator () throws CommandExecutingException, ArgsAmountException {
 
         //потом удалить
         System.out.println("\nstarting executing...\n");
@@ -155,14 +157,11 @@ public class MyExecutor {
             //createdCommandMap.put(data.getCommandClassName(), fabricMethod(data));
 
             AbstractCommand command = fabricMethod(data);
-            try {
-                command.doOperation();
-            } catch (Exception e) {
-                e.printStackTrace();            // поменять ошибку, мб по-другому отловить
-            }
+            command.doOperation();
         }
 
         //Вывод результата (содержимого стека)
+        //тут тоже вроде может ошибка выскочить
         createWriterAndWrite(outputFileName, stack);
 
     }

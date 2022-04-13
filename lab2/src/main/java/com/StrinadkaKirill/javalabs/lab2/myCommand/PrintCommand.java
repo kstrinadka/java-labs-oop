@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class PrintCommand extends AbstractCommand{
     @Override
-    public void doOperation() throws Exception {
+    public void doOperation() throws RuntimeException {
 
         System.out.println(context.peekTop());
 

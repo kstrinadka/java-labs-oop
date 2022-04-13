@@ -1,14 +1,16 @@
 package com.StrinadkaKirill.javalabs.lab2.myCommand;
 
 import com.StrinadkaKirill.javalabs.lab2.MyContext;
+import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
+import com.StrinadkaKirill.javalabs.lab2.myExceptions.commandException.DivideByZeroException;
 
 import java.util.ArrayList;
 
 public class DivideCommand extends AbstractCommand{
     @Override
-    public void doOperation() throws Exception {
+    public void doOperation() throws RuntimeException {
         if (arguments != null) {
-            throw new RuntimeException();   //Заменить на свою ошибку
+            throw new ArgsAmountException("in DivideCommand: " + context.toString());
         }
 
         String a1 = context.pop();
@@ -20,7 +22,7 @@ public class DivideCommand extends AbstractCommand{
         double number2 = checkNumerOrVariable(a2);
 
         if (number2 == 0.0) {
-            throw new Exception("division by zero"); //Заменить на свою ошибку
+            throw new DivideByZeroException("division by zero"); //Заменить на свою ошибку
         }
         else {
             String result = String.valueOf(number1 / number2);

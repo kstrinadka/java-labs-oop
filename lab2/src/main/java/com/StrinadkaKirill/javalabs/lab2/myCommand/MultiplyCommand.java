@@ -1,15 +1,16 @@
 package com.StrinadkaKirill.javalabs.lab2.myCommand;
 
 import com.StrinadkaKirill.javalabs.lab2.MyContext;
+import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
 
 import java.util.ArrayList;
 
 public class MultiplyCommand extends AbstractCommand{
     @Override
-    public void doOperation() throws Exception {
+    public void doOperation() throws RuntimeException {
 
         if (arguments != null) {
-            throw new IllegalArgumentException();   //Заменить на свою ошибку
+            throw new ArgsAmountException("bad number of arguments in MultiplyCommand:" + context.toString());
         }
 
         String a1 = context.pop();
@@ -19,13 +20,8 @@ public class MultiplyCommand extends AbstractCommand{
         double number1 = checkNumerOrVariable(a1);
         double number2 = checkNumerOrVariable(a2);
 
-        if (number2 == 0.0) {
-            throw new Exception("division by zero"); //Заменить на свою ошибку
-        }
-        else {
-            String result = String.valueOf(number1 * number2);
-            context.push(result);
-        }
+        String result = String.valueOf(number1 * number2);
+        context.push(result);
     }
 
 
