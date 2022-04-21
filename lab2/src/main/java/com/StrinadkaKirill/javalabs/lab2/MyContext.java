@@ -30,7 +30,7 @@ public class MyContext {
             return element;
         }
         else {
-            StackException exception = new StackException("trying to get element from empty stack");      //заменить на свой exception
+            StackException exception = new StackException("trying to get element from empty stack");
             throw exception;
         }
     }
@@ -73,6 +73,13 @@ public class MyContext {
         }
 
         return defineVariables.get(key);
+    }
+
+    public boolean stackIsEmpty (){
+        if (stack == null || stack.size() == 0) {
+            return true;
+        }
+        else return false;
     }
 
 

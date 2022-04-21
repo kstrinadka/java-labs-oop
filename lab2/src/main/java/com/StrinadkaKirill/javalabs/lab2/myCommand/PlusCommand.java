@@ -16,8 +16,6 @@ public class PlusCommand extends AbstractCommand{
         String a1 = context.pop();
         String a2 = context.pop();
 
-        //проверить не переменнная ли a1 и a2
-
 
         double number1 = checkNumerOrVariable(a1);
         double number2 = checkNumerOrVariable(a2);

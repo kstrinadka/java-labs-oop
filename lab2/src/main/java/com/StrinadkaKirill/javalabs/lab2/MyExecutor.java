@@ -11,14 +11,19 @@ import com.StrinadkaKirill.javalabs.lab2.reader.FileReaderMy;
 import com.StrinadkaKirill.javalabs.lab2.writer.ConsoleWriterMy;
 import com.StrinadkaKirill.javalabs.lab2.writer.FileWriterMy;
 import com.StrinadkaKirill.javalabs.lab2.writer.MyAbstractWriter;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
+/**
+ * Класс исполнения команд для калькулятора
+ * Здесь создаются классы для чтения и записи результата
+ */
 public class MyExecutor {
-
 
 
     private final String outputFileName;
@@ -37,6 +42,8 @@ public class MyExecutor {
     //map with instances of commands
     private TreeMap<String, AbstractCommand> createdCommandMap;
 
+    private static final Logger logger = LogManager.getLogger(MainClass.class.getName());
+
 
 
 
@@ -49,6 +56,11 @@ public class MyExecutor {
     }
 
 
+    /**
+     * Создание ридера
+     * @param INPUT_FILE_NAME имя входящего вайла. Если null, то чтение из консоли
+     * @return
+     */
     public static ArrayList<String> createReader (String INPUT_FILE_NAME) {
 
         MyAbstractReader reader;
@@ -83,6 +95,11 @@ public class MyExecutor {
         return listOfInput;
     }
 
+
+    /**
+     * @param OUTPUT_FILE_NAME . Если null, то запись результата происходит в консоль
+     * @param stack
+     */
     public static void createWriterAndWrite(String OUTPUT_FILE_NAME, ArrayList<String> stack) {
 
         MyAbstractWriter writer = null;
@@ -120,6 +137,12 @@ public class MyExecutor {
 
     //тут создается класс команды по ее имени+
     //возможно нужно сделать конструктор без аргументов, а аргументы передавать в метод
+
+    /**
+     * Создает необходимую для исполнения команду
+     * @param data - содержит в себе название команды и аргументы для нее
+     * @return
+     */
     private AbstractCommand fabricMethod(Data data) {
 
         AbstractCommand command;
@@ -148,22 +171,44 @@ public class MyExecutor {
     }
 
 
-    public void executeCalculator () throws CommandExecutingException, ArgsAmountException {
+    /**
+     * Последовательно исполняет все команды, полученные на вход
+     * @return возвращает результат
+     * @throws CommandExecutingException
+     * @throws ArgsAmountException
+     */
+    public String executeCalculator () throws CommandExecutingException, ArgsAmountException {
 
-        //потом удалить
-        System.out.println("\nstarting executing...\n");
+        logger.info("starting executing calculator");
 
         for (Data data: dataArrayList) {
-            //createdCommandMap.put(data.getCommandClassName(), fabricMethod(data));
 
             AbstractCommand command = fabricMethod(data);
-            command.doOperation();
+
+            try {
+                command.doOperation();
+            }
+            catch (RuntimeException e) {
+                logger.info("error in command ", e);
+            }
+
         }
 
+        String result = context.peekTop();
+
+        logger.info("stop executing calculator and writing result");
         //Вывод результата (содержимого стека)
         //тут тоже вроде может ошибка выскочить
         createWriterAndWrite(outputFileName, stack);
 
+        return result;
+    }
+
+
+
+    
+    public String stackPeekTop() {
+        return context.peekTop();
     }
 
     public void printCommandMap() {

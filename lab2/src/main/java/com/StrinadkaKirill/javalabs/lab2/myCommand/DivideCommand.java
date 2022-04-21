@@ -16,13 +16,13 @@ public class DivideCommand extends AbstractCommand{
         String a1 = context.pop();
         String a2 = context.pop();
 
-        //проверить не переменнная ли это
+
 
         double number1 = checkNumerOrVariable(a1);
         double number2 = checkNumerOrVariable(a2);
 
         if (number2 == 0.0) {
-            throw new DivideByZeroException("division by zero"); //Заменить на свою ошибку
+            throw new DivideByZeroException("division by zero");
         }
         else {
             String result = String.valueOf(number1 / number2);

@@ -5,9 +5,7 @@ import com.StrinadkaKirill.javalabs.lab2.MyContext;
 
 import java.util.ArrayList;
 
-//у этой штуки должен быть доступ к мапе с переменными, список ее аргументов,
-//доступ к стеку, чтобы команда сама забирала от-туда и сама обратно клала
-// по итогу внутри ссылка на мапу, ссылка на стек
+
 public abstract class AbstractCommand {
 
     protected MyContext context;
