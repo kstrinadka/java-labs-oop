@@ -4,7 +4,11 @@ import com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
+import static com.StrinadkaKirill.javalabs.lab2.Constants.*;
 
+/**
+ * Класс контекст, содержащий в себе стэк калькулятора, определенные переменные в мапе и все методы для работы с ними
+ */
 public class MyContext {
 
     //stack for calculator
@@ -25,8 +29,10 @@ public class MyContext {
     //поменять потом на свои исключения
     public String pop() throws StackException {
         if (stack != null && !stack.isEmpty()) {
-            String element = stack.get(stack.size()-1);
-            stack.remove(stack.size()-1);
+            final int LAST_ELEMENT = stack.size()-1;
+
+            String element = stack.get(LAST_ELEMENT);
+            stack.remove(LAST_ELEMENT);
             return element;
         }
         else {
@@ -37,7 +43,9 @@ public class MyContext {
 
     public String peekTop() throws StackException {
         if (stack != null && !stack.isEmpty()) {
-            String element = stack.get(stack.size()-1);
+            final int LAST_ELEMENT = stack.size()-1;
+
+            String element = stack.get(LAST_ELEMENT);
             return element;
         }
         else {
@@ -76,7 +84,7 @@ public class MyContext {
     }
 
     public boolean stackIsEmpty (){
-        if (stack == null || stack.size() == 0) {
+        if (stack == null || stack.size() == EMPTY) {
             return true;
         }
         else return false;

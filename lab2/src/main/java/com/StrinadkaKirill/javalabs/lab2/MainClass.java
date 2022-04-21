@@ -5,8 +5,11 @@ import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+
 import java.io.IOException;
 import java.util.ArrayList;
+
+import static com.StrinadkaKirill.javalabs.lab2.Constants.*;
 
 public class MainClass {
 
@@ -22,13 +25,13 @@ public class MainClass {
 
 
         try {
-            if (args.length == 2) {
+            if (args.length == TWO_ARGUMENTS) {
                 logger.info("There are 2 args. Program starts with file input");
 
-                INPUT_FILE_NAME = args[0];
-                OUTPUT_FILE_NAME = args[1];
+                INPUT_FILE_NAME = args[FIRST_ARGUMENT];
+                OUTPUT_FILE_NAME = args[SECOND_ARGUMENT];
 
-            } else if (args.length == 0) {
+            } else if (args.length == NO_ARGS) {
                 logger.info("There are no args. Program starts with console input");
 
                 INPUT_FILE_NAME = null;

@@ -6,6 +6,9 @@ import com.StrinadkaKirill.javalabs.lab2.MyContext;
 import java.util.ArrayList;
 
 
+/**
+ * Абстрактный класс от которого мы реализуем команды калькулятора
+ */
 public abstract class AbstractCommand {
 
     protected MyContext context;
@@ -13,13 +16,20 @@ public abstract class AbstractCommand {
     protected ArrayList<String> arguments;
 
 
+    /**
+     * @param context - содержит стек и определения переменных
+     * @param arguments - входящие аргументы
+     */
     public AbstractCommand(MyContext context, ArrayList<String> arguments) {
         this.context = context;
         this.arguments = arguments;
     }
 
 
-    //this is operation that can do each command
+    /**
+     * this is operation that can do each command
+     * @throws RuntimeException
+     */
     public abstract void doOperation() throws RuntimeException;
 
 
@@ -32,7 +42,11 @@ public abstract class AbstractCommand {
     }
 
 
-    //checking element from stack. Is it double or defined variable?
+    /**
+     * checking element from stack. Is it double or defined variable
+     * @param variable - переменная, которую мы проверяем в задефайненых
+     * @return
+     */
     protected double checkNumerOrVariable(String variable) {
 
         double number1;

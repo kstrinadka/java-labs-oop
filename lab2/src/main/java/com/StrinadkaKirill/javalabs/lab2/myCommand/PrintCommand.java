@@ -4,6 +4,9 @@ import com.StrinadkaKirill.javalabs.lab2.MyContext;
 
 import java.util.ArrayList;
 
+/**
+ * Класс команды "PRINT" стэкового калькулятора, имплементирующий AbstractCommand
+ */
 public class PrintCommand extends AbstractCommand{
     @Override
     public void doOperation() throws RuntimeException {

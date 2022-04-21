@@ -58,3 +58,111 @@
 2022-04-21 21:21:36 INFO  MainClass:26 - There are 2 args. Program starts with file input
 2022-04-21 21:21:36 INFO  MainClass:156 - starting executing calculator
 2022-04-21 21:21:36 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 22:33:41 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:33:41 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:86)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:28)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:86)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:22)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:55)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:42)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:42)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:42)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:42)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 ERROR MainClass:82 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:55)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:197)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:36:00 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-04-21 22:36:00 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:36:00 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:36:29 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:36:29 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:36:29 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:37:23 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:37:23 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:37:23 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:37:33 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:37:33 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:37:33 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:38:25 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:38:25 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:38:25 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:38:48 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:38:48 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:38:48 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:40:06 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:40:06 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:40:06 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:40:45 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:40:45 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:40:45 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:40:57 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:40:57 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:40:57 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:41:04 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:41:04 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:41:04 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:42:24 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:42:24 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:42:24 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:43:29 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:43:29 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:43:29 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:43:51 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:43:51 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:43:51 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:44:56 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:44:56 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:44:56 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:45:18 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:45:18 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:45:18 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:45:39 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:45:39 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:45:39 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:46:52 INFO  MainClass:35 - There are no args. Program starts with console input
+2022-04-21 22:47:00 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:47:00 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:49:17 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:49:17 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:49:17 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:49:49 INFO  MainClass:35 - There are no args. Program starts with console input
+2022-04-21 22:49:58 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:49:58 INFO  MainClass:199 - stop executing calculator and writing result

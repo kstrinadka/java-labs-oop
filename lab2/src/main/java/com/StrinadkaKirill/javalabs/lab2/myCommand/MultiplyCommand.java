@@ -5,6 +5,10 @@ import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
 
 import java.util.ArrayList;
 
+
+/**
+ * Класс команды "*" стэкового калькулятора, имплементирующий AbstractCommand
+ */
 public class MultiplyCommand extends AbstractCommand{
     @Override
     public void doOperation() throws RuntimeException {

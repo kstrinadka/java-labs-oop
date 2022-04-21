@@ -5,7 +5,11 @@ import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
 import com.StrinadkaKirill.javalabs.lab2.myExceptions.commandException.SqrtException;
 
 import java.util.ArrayList;
+import static com.StrinadkaKirill.javalabs.lab2.Constants.*;
 
+/**
+ * Класс команды "SQRT" стэкового калькулятора, имплементирующий AbstractCommand
+ */
 public class SqrtCommand extends AbstractCommand{
     @Override
     public void doOperation() throws RuntimeException {
@@ -19,7 +23,7 @@ public class SqrtCommand extends AbstractCommand{
         double number1 = checkNumerOrVariable(a1);
 
 
-        if (number1 < 0.0) {
+        if (number1 < DOUBLE_ZERO) {
             throw new SqrtException("negative number sqrt: " + context.toString());
         }
         else {

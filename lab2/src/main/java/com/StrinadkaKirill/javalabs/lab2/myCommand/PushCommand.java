@@ -4,16 +4,20 @@ import com.StrinadkaKirill.javalabs.lab2.MyContext;
 import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
 
 import java.util.ArrayList;
+import static com.StrinadkaKirill.javalabs.lab2.Constants.*;
 
+/**
+ * Класс команды "PUSH" стэкового калькулятора, имплементирующий AbstractCommand
+ */
 public class PushCommand extends AbstractCommand{
     @Override
     public void doOperation() throws RuntimeException {
 
-        if (arguments.size() != 1) {
+        if (arguments.size() != ONE_ARGUMENT) {
             throw new ArgsAmountException("bad number of args in PushCommand");   //Заменить на свою ошибку
         }
 
-        String a1 = arguments.get(0);
+        String a1 = arguments.get(FIRST_ARGUMENT);
 
         context.push(a1);
 

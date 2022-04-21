@@ -5,7 +5,11 @@ import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
 import com.StrinadkaKirill.javalabs.lab2.myExceptions.commandException.DivideByZeroException;
 
 import java.util.ArrayList;
+import static com.StrinadkaKirill.javalabs.lab2.Constants.*;
 
+/**
+ * Класс команды "/" стэкового калькулятора, имплементирующий AbstractCommand
+ */
 public class DivideCommand extends AbstractCommand{
     @Override
     public void doOperation() throws RuntimeException {
@@ -21,7 +25,7 @@ public class DivideCommand extends AbstractCommand{
         double number1 = checkNumerOrVariable(a1);
         double number2 = checkNumerOrVariable(a2);
 
-        if (number2 == 0.0) {
+        if (number2 == DOUBLE_ZERO) {
             throw new DivideByZeroException("division by zero");
         }
         else {

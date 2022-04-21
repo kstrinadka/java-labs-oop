@@ -5,6 +5,9 @@ import com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException;
 
 import java.util.ArrayList;
 
+/**
+ * Класс команды "POP" стэкового калькулятора, имплементирующий AbstractCommand
+ */
 public class PopCommand extends AbstractCommand {
     @Override
     public void doOperation() throws RuntimeException {
