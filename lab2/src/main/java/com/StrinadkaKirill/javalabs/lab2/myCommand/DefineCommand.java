@@ -17,7 +17,7 @@ public class DefineCommand extends AbstractCommand {
     @Override
     public void doOperation() throws  RuntimeException{
         if (arguments.size() != TWO_ARGUMENTS) {
-            throw new ArgsAmountException("pop");   //Заменить на свою ошибку
+            throw new ArgsAmountException("pop");
         }
 
 

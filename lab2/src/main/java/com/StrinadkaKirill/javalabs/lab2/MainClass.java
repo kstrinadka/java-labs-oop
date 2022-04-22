@@ -14,7 +14,6 @@ import static com.StrinadkaKirill.javalabs.lab2.Constants.*;
 public class MainClass {
 
     private static final Logger logger = LogManager.getLogger(MainClass.class.getName());
-    //logger.setLevel(Level.WARNING);
 
 
     public static void main(String[] args) {
@@ -38,7 +37,7 @@ public class MainClass {
                 OUTPUT_FILE_NAME = null;
 
             } else {
-                throw new ArgsAmountException("bad number of args");           //заменить на своё
+                throw new ArgsAmountException("bad number of args");
             }
         } catch (ArgsAmountException exception) {
             logger.error("Wrong amount of arguments given", exception);

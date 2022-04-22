@@ -1,7 +1,5 @@
 package com.StrinadkaKirill.javalabs.lab2.myExceptions.commandException;
 
-import com.StrinadkaKirill.javalabs.lab2.MyContext;
-
 public class CommandExecutingException extends RuntimeException{
 
 

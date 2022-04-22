@@ -80,7 +80,7 @@ public class MyExecutor {
         }
         catch (ClassNotFoundException | InstantiationException | NoSuchMethodException | InvocationTargetException |
                 IllegalAccessException e) {
-            e.printStackTrace();
+            logger.info("error in creating Reader class ", e);
             return null;
         }
 
@@ -88,8 +88,7 @@ public class MyExecutor {
             listOfInput = reader.getText();
         }
         catch (IOException | NullPointerException e) {
-            e.printStackTrace();
-            System.out.println("smth wrong with input");
+            logger.info("error in reading from input", e);
         }
 
         return listOfInput;
@@ -120,23 +119,18 @@ public class MyExecutor {
         }
         catch (ClassNotFoundException | InstantiationException | NoSuchMethodException | InvocationTargetException |
                 IllegalAccessException e) {
-            e.printStackTrace();
-            System.out.println("smth wrong with creating result Writer");
+            logger.info("smth wrong with creating Writer class ", e);
         }
 
         try {
             writer.writeResult();
         }
         catch (IOException | NullPointerException e) {
-            e.printStackTrace();
-            System.out.println("smth wrong with result output");
+            logger.info("smth wrong with result output", e);
         }
 
     }
 
-
-    //тут создается класс команды по ее имени+
-    //возможно нужно сделать конструктор без аргументов, а аргументы передавать в метод
 
     /**
      * Создает необходимую для исполнения команду
@@ -161,14 +155,6 @@ public class MyExecutor {
         return command;
     }
 
-
-    //можно убрать этот метод и сразу исполнять программу здесь
-    public void createCommandMap() {
-        createdCommandMap = new TreeMap<>();
-        for (Data data: dataArrayList) {
-            createdCommandMap.put(data.getCommandClassName(), fabricMethod(data));
-        }
-    }
 
 
     /**
@@ -197,8 +183,7 @@ public class MyExecutor {
         String result = context.peekTop();
 
         logger.info("stop executing calculator and writing result");
-        //Вывод результата (содержимого стека)
-        //тут тоже вроде может ошибка выскочить
+
         createWriterAndWrite(outputFileName, stack);
 
         return result;
@@ -206,13 +191,5 @@ public class MyExecutor {
 
 
 
-    
-    public String stackPeekTop() {
-        return context.peekTop();
-    }
-
-    public void printCommandMap() {
-        createdCommandMap.forEach((key, value) -> System.out.println(/*key + ":" + */value));
-    }
 
 }

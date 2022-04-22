@@ -166,3 +166,35 @@ com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get ele
 2022-04-21 22:49:49 INFO  MainClass:35 - There are no args. Program starts with console input
 2022-04-21 22:49:58 INFO  MainClass:182 - starting executing calculator
 2022-04-21 22:49:58 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:54:18 INFO  MainClass:35 - There are no args. Program starts with console input
+2022-04-21 22:54:43 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:54:43 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:54:43 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:54:51 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:54:51 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:54:51 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-22 13:04:09 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-22 13:04:10 INFO  MainClass:182 - starting executing calculator
+2022-04-22 13:04:10 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-22 13:14:29 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-22 13:14:29 INFO  MainClass:171 - starting executing calculator
+2022-04-22 13:14:29 INFO  MainClass:188 - stop executing calculator and writing result
+2022-04-22 13:16:38 INFO  MainClass:171 - starting executing calculator
+2022-04-22 13:16:38 INFO  MainClass:188 - stop executing calculator and writing result
+2022-04-22 13:18:11 INFO  MainClass:171 - starting executing calculator
+2022-04-22 13:18:11 INFO  MainClass:188 - stop executing calculator and writing result
+2022-04-22 13:25:43 INFO  MainClass:168 - starting executing calculator
+2022-04-22 13:25:43 INFO  MainClass:185 - stop executing calculator and writing result
+2022-04-22 13:26:03 INFO  MainClass:168 - starting executing calculator
+2022-04-22 13:26:03 INFO  MainClass:185 - stop executing calculator and writing result
+2022-04-22 13:26:10 INFO  MainClass:28 - There are 2 args. Program starts with file input
+2022-04-22 13:26:10 INFO  MainClass:168 - starting executing calculator
+2022-04-22 13:26:10 INFO  MainClass:185 - stop executing calculator and writing result
+2022-04-22 13:30:08 INFO  MainClass:28 - There are 2 args. Program starts with file input
+2022-04-22 13:30:08 INFO  MainClass:19 - getting text from file reader
+2022-04-22 13:30:08 INFO  MainClass:168 - starting executing calculator
+2022-04-22 13:30:08 INFO  MainClass:185 - stop executing calculator and writing result
+2022-04-22 13:31:06 INFO  MainClass:34 - There are no args. Program starts with console input
+2022-04-22 13:31:06 INFO  MainClass:19 - getting text from console reader
+2022-04-22 13:31:10 INFO  MainClass:168 - starting executing calculator
+2022-04-22 13:31:10 INFO  MainClass:185 - stop executing calculator and writing result

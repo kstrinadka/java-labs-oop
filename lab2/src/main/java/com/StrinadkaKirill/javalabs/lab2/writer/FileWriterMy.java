@@ -10,7 +10,6 @@ public class FileWriterMy extends MyAbstractWriter {
     @Override
     public void writeResult() throws IOException {
 
-
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
 
         for (String str: stack) {

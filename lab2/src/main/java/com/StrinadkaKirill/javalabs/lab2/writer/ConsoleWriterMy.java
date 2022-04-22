@@ -11,11 +11,7 @@ public class ConsoleWriterMy extends MyAbstractWriter {
         for (String str: stack) {
             System.out.println(str);
         }
-
-
-
     }
-
 
     public ConsoleWriterMy(String fileName, ArrayList<String> stack) {
         super(fileName, stack);

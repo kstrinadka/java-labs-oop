@@ -25,8 +25,6 @@ public class MyContext {
     }
 
 
-
-    //поменять потом на свои исключения
     public String pop() throws StackException {
         if (stack != null && !stack.isEmpty()) {
             final int LAST_ELEMENT = stack.size()-1;
@@ -60,10 +58,6 @@ public class MyContext {
 
     public void setDefine(String key, double value) {
         defineVariables.put(key, value);
-    }
-
-    public boolean containsVariable(String key) {
-        return defineVariables.containsKey(key);
     }
 
     public double getDefine(String key) {

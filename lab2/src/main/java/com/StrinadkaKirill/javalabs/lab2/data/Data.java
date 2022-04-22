@@ -1,20 +1,28 @@
 package com.StrinadkaKirill.javalabs.lab2.data;
 
 
-//import com.StrinadkaKirill.javalabs.lab2.data.myCommand.*;
+
 import com.StrinadkaKirill.javalabs.lab2.myCommand.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
+/**
+ * Преобразует строку со входа в данные, с которыми может работать калькулятор
+ */
 public class Data {
 
     private final String typeOfOperation;
     private final ArrayList<String> arguments;
 
 
-    //тут обычная строка со входа превращается в разделенную на тип команды и аргументы
+    /**
+     * тут обычная строка со входа превращается в разделенную на тип команды и аргументы
+     * @param str
+     * @throws IOException
+     */
     public Data(String str) throws IOException {
 
         this.arguments = converteStringToList(str);
@@ -28,7 +36,12 @@ public class Data {
 
     }
 
-    //creating list of Data from input data
+    /**
+     * creating list of Data from input data
+     * @param list - list of strings from input data
+     * @return
+     * @throws IOException
+     */
     public static ArrayList<Data> createDataList(ArrayList<String> list) throws IOException {
         ArrayList<Data> dataArrayList = new ArrayList<>();
         for (String str: list) {
@@ -38,6 +51,7 @@ public class Data {
 
         return dataArrayList;
     }
+
 
     private ArrayList<String> converteStringToList(String str) {
 
@@ -52,6 +66,7 @@ public class Data {
             return null;
         }
     }
+
 
     private String getOperationNameFromString(String str) {
 

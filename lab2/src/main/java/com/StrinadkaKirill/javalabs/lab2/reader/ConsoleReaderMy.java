@@ -1,5 +1,9 @@
 package com.StrinadkaKirill.javalabs.lab2.reader;
 
+import com.StrinadkaKirill.javalabs.lab2.MainClass;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,12 +11,12 @@ import java.util.ArrayList;
 
 public class ConsoleReaderMy extends MyAbstractReader {
 
+    private static final Logger logger = LogManager.getLogger(MainClass.class.getName());
 
     @Override
     public ArrayList<String> getText() throws IOException {
 
-
-        System.out.println("we are in console reader\n");
+        logger.info("getting text from console reader");
 
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(System.in));

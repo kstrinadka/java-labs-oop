@@ -3,7 +3,9 @@ package com.StrinadkaKirill.javalabs.lab2.reader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-// return Data of read text from console or from file
+/**
+ * return Data of read text from console or from file
+ */
 public abstract class MyAbstractReader {
 
 
