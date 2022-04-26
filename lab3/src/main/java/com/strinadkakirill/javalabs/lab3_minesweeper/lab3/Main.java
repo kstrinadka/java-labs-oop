@@ -1,5 +1,7 @@
 package com.strinadkakirill.javalabs.lab3_minesweeper.lab3;
 
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Field;
+
 public class Main {
 
 
@@ -10,7 +12,9 @@ public class Main {
         //работает
     //завершается
 
+        Field field = new Field();
 
+        field.printMainField();
 
     }
 }
