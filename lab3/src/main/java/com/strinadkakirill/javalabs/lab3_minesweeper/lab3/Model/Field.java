@@ -3,10 +3,7 @@ package com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.MissingFormatArgumentException;
-import java.util.Random;
+import java.util.*;
 
 public class Field {
 
@@ -14,14 +11,18 @@ public class Field {
     //должны поступать из вне
     private int widthOfField = 9;       //y
     private int heightOfField = 9;      //x
+    private int numberOfMines = 10;
 
 
     ArrayList<Cell> mainField = new ArrayList<>();
 
 
     public Field() {
+
+        String gameMode = choosingGameMode();
+
         createMainField();
-        setMines(10);           //пока что ставим за мин на поле 9*9
+        setMines();           //пока что ставим 10 мин на поле 9*9
 
     }
 
@@ -65,6 +66,11 @@ public class Field {
         this.mainField.set(x*this.widthOfField + y, cell);
     }
 
+
+    /** установить мину в заданных координатах
+     * @param x
+     * @param y
+     */
     private void setOneMine(int x, int y) {
         //если координаты начинаются с 0, то отнимаем 1
         x = x - 1;
@@ -102,11 +108,11 @@ public class Field {
 
     /**
      * Расставляет мины на заданном поле случайным образом
-     * @param numberOfMines - количество мин
+     * Сейчас мины могут несколько раз в одно и то же место ставится
      */
-    void setMines(int numberOfMines) {
+    void setMines() {
         Random random = new Random();
-        int n = numberOfMines;
+        int n = this.numberOfMines;
 
         myBreakLabel:
         while (n > 0) {
@@ -115,15 +121,41 @@ public class Field {
                 {
                     int x = random.nextInt(23);
                     if (x % 7 == 0) {
-                        //set mine
-                        setOneMine(i,j);
-                        n--;
-                        if (n < 1) {
-                            break myBreakLabel;
+                        //проверяем нет ли уже тут мины и только потом ее ставим
+                        if (!checkMineHere(i,j)) {
+                            setOneMine(i,j);
+                            n--;
+                            if (n < 1) {
+                                break myBreakLabel;
+                            }
                         }
+
                     }
                 }
         }
+    }
+
+
+    /**
+     * Проверяем клетку с координатами x y на мину
+     * @return - оказалась ли здесь мина
+     */
+    boolean checkMineHere (int x, int y) {
+        Cell oneCell = getCell(x, y);
+        return oneCell.cellHasMine();
+    }
+
+
+    /**
+     * получаем клетку с поля по координатам. (можно для проверки есть там мина или нет)
+     * @return
+     */
+    Cell getCell(int x, int y) {
+        x--;
+        y--;
+        Cell oneCell = this.mainField.get(x*this.widthOfField + y);
+
+        return oneCell;
     }
 
 
@@ -140,19 +172,9 @@ public class Field {
                 
                 """);
 
-        BufferedReader reader = new BufferedReader(
-                new InputStreamReader(System.in));
-
+        Scanner myInput = new Scanner( System.in );
         int gameMode = 0;
-        String input = "none";
-        try {
-            input = reader.readLine();
-        } catch (IOException e) {
-            System.out.println("error in reading game mode");
-            e.printStackTrace();
-        }
-
-        gameMode = Integer.parseInt(input);
+        gameMode = myInput.nextInt();
 
         if (gameMode == 0) {
             throw new MissingFormatArgumentException("wrong name of game mode");
@@ -172,6 +194,79 @@ public class Field {
         }
 
         System.out.println("you chose " + nameOfGameMode + " gamemode");
+
+        setFieldSizes(nameOfGameMode);
+
         return nameOfGameMode;
     }
+
+
+    /** задает параметры поля по игровому режиму
+     * @param gameMode - выбранный пользователем игровой режим
+     */
+    private void setFieldSizes(String gameMode) {
+
+        switch (gameMode) {
+            case "Beginner":  {
+                this.widthOfField = 9;
+                this.heightOfField = 9;
+                this.numberOfMines = 10;
+            }
+                break;
+            case "Intermediate":  {
+                this.widthOfField = 16;
+                this.heightOfField = 16;
+                this.numberOfMines = 40;
+            }
+                break;
+            case "Profesional":  {
+                this.widthOfField = 30;
+                this.heightOfField = 16;
+                this.numberOfMines = 99;
+            }
+                break;
+            case "Specific":  {
+                installationSpecificMode();
+            }
+                break;
+
+            default: {
+                System.out.println("не сработал почему-то никакой из вариантов при задании размеров поля");
+                throw new MissingFormatArgumentException(gameMode);
+            }
+        }
+
+
+    }
+
+    private void installationSpecificMode() {
+        Scanner myInput = new Scanner( System.in );
+        int widthOfField = 0, heightOfField = 0;
+
+        System.out.println("""
+                put your field height and width here...              
+                """);
+
+
+        widthOfField = myInput.nextInt();
+        heightOfField = myInput.nextInt();
+
+        int numberOfMines = 0;
+        System.out.println("""
+                put your number of mines here...              
+                """);
+
+        numberOfMines = myInput.nextInt();
+
+
+        if (widthOfField == 0 || heightOfField == 0 || numberOfMines == 0) {
+            throw new RuntimeException("bad arguments for Specific mode");
+        }
+
+        this.widthOfField = widthOfField;
+        this.heightOfField = heightOfField;
+        this.numberOfMines = numberOfMines;
+    }
+
+
 }

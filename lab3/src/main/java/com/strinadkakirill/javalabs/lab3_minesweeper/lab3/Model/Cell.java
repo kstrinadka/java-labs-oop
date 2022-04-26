@@ -30,8 +30,17 @@ public class Cell {
     public String toString() {
 
         if (this.hasMine) {
-            return "8";
+            return "9";
         }
         else return "0";
     }
+
+
+    /**
+     * @return - есть мина в этой клетке или нет
+     */
+    public boolean cellHasMine() {
+        return this.hasMine;
+    }
+
 }
