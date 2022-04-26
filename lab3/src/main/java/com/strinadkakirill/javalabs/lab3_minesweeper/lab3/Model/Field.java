@@ -1,7 +1,11 @@
 package com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.MissingFormatArgumentException;
 import java.util.Random;
 
 public class Field {
@@ -94,13 +98,6 @@ public class Field {
     }
 
 
-    /*
-    Random ran = new Random();
-    int x = ran.nextInt(6) + 5;
-
-    The integer x is now the random number that has a possible outcome of 5-10.
-     */
-
     /**
      * Расставляет мины на заданном поле случайным образом
      * @param numberOfMines - количество мин
@@ -121,11 +118,50 @@ public class Field {
                     }
                 }
         }
-
-
-
     }
 
 
+    public String choosingGameMode() {
+        System.out.println("""
+                press 1 to choose "Beginner"
+                press 2 to choose "Intermediate"
+                press 3 to choose "Profesional"
+                
+                """);
 
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(System.in));
+
+        int gameMode = 0;
+        String input = "none";
+        try {
+            input = reader.readLine();
+        } catch (IOException e) {
+            System.out.println("error in reading game mode");
+            e.printStackTrace();
+        }
+
+        gameMode = Integer.getInteger(input);
+
+        if (gameMode == 0) {
+            throw new MissingFormatArgumentException("wrong name of game mode");
+        }
+
+        String nameOfGameMode = switch (gameMode) {
+            case 1 -> "Beginner";
+            case 2 -> "Intermediate";
+            case 3 -> "Profesional";
+            //возможно тут надо кидать ошибку с неправильным названием команды
+            default -> null;
+        };
+
+        if (nameOfGameMode == null) {
+            throw new MissingFormatArgumentException("wrong name of game mode");
+        }
+
+
+        System.out.println("you chose " + gameMode + " gamemode");
+
+        return nameOfGameMode;
+    }
 }
