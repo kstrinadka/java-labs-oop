@@ -126,6 +126,7 @@ public class Field {
                 press 1 to choose "Beginner"
                 press 2 to choose "Intermediate"
                 press 3 to choose "Profesional"
+                press 4 to choose "Specific"
                 
                 """);
 
@@ -141,7 +142,8 @@ public class Field {
             e.printStackTrace();
         }
 
-        gameMode = Integer.getInteger(input);
+        //gameMode = Integer.getInteger(input);
+        gameMode = Integer.parseInt(input);
 
         if (gameMode == 0) {
             throw new MissingFormatArgumentException("wrong name of game mode");
@@ -151,6 +153,7 @@ public class Field {
             case 1 -> "Beginner";
             case 2 -> "Intermediate";
             case 3 -> "Profesional";
+            case 4 -> "Specific";
             //возможно тут надо кидать ошибку с неправильным названием команды
             default -> null;
         };
@@ -160,7 +163,7 @@ public class Field {
         }
 
 
-        System.out.println("you chose " + gameMode + " gamemode");
+        System.out.println("you chose " + nameOfGameMode + " gamemode");
 
         return nameOfGameMode;
     }
