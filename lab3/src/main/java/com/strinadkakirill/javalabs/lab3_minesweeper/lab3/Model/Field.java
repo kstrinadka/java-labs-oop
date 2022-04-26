@@ -12,8 +12,8 @@ public class Field {
 
 
     //должны поступать из вне
-    private int n = 9;
-    private int m = 9;
+    private int widthOfField = 9;       //y
+    private int heightOfField = 9;      //x
 
 
     ArrayList<Cell> mainField = new ArrayList<>();
@@ -26,32 +26,34 @@ public class Field {
     }
 
 
-
+    /**
+     * Создает поле, в котором каждая клетка закрыта и без мины
+     */
     private void createMainField () {
-        this.mainField = new ArrayList<>(Arrays.asList(new Cell[n*m]));
-        //this.mainField.ensureCapacity(n*m);
+        this.mainField = new ArrayList<>(Arrays.asList(new Cell[this.heightOfField*this.widthOfField]));
 
         System.out.println("capacity of field = " + this.mainField.size());
 
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < m; j++) {
-                this.mainField.set(m*i + j, new Cell(CellConditions.CLOSED, false));
+        for (int i = 0; i < this.heightOfField; ++i) {
+            for (int j = 0; j < this.widthOfField; j++) {
+                this.mainField.set(this.widthOfField*i + j, new Cell(CellConditions.CLOSED, false));
             }
         }
     }
 
 
-
+    /**
+     * печатает поле в консоль (пока что использую для отладки)
+     */
     public void printMainField() {
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < m; j++) {
-                Cell a = this.mainField.get(n*i + j);
+        for (int i = 0; i < this.heightOfField; ++i) {
+            for (int j = 0; j < this.widthOfField; j++) {
+                Cell a = this.mainField.get(this.widthOfField*i + j);
                 System.out.print(a + " ");
             }
             System.out.print("\n");
         }
     }
-
 
 
     public void setCell(int x, int y, boolean hasMine) {
@@ -60,7 +62,7 @@ public class Field {
 
         Cell cell = new Cell(CellConditions.CLOSED, true);
 
-        this.mainField.set(x*n + y, cell);
+        this.mainField.set(x*this.widthOfField + y, cell);
     }
 
     private void setOneMine(int x, int y) {
@@ -70,7 +72,7 @@ public class Field {
 
         Cell cell = new Cell(CellConditions.CLOSED, true);
 
-        this.mainField.set(x*n + y, cell);
+        this.mainField.set(x*this.widthOfField + y, cell);
     }
 
 
@@ -106,21 +108,29 @@ public class Field {
         Random random = new Random();
         int n = numberOfMines;
 
+        myBreakLabel:
         while (n > 0) {
-            for (int i = 1; i <= this.n; i++)
-                for (int j = 1; j <= this.m; j++)
+            for (int i = 1; i <= this.heightOfField; i++)
+                for (int j = 1; j <= this.widthOfField; j++)
                 {
                     int x = random.nextInt(23);
                     if (x % 7 == 0) {
                         //set mine
                         setOneMine(i,j);
                         n--;
+                        if (n < 1) {
+                            break myBreakLabel;
+                        }
                     }
                 }
         }
     }
 
 
+    /**
+     * Выбираем здесь режим игры
+     * @return - строка с названием режима игры
+     */
     public String choosingGameMode() {
         System.out.println("""
                 press 1 to choose "Beginner"
@@ -142,7 +152,6 @@ public class Field {
             e.printStackTrace();
         }
 
-        //gameMode = Integer.getInteger(input);
         gameMode = Integer.parseInt(input);
 
         if (gameMode == 0) {
@@ -162,9 +171,7 @@ public class Field {
             throw new MissingFormatArgumentException("wrong name of game mode");
         }
 
-
         System.out.println("you chose " + nameOfGameMode + " gamemode");
-
         return nameOfGameMode;
     }
 }
