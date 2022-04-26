@@ -7,4 +7,6 @@ module com.strinadkakirill.javalabs.lab3_minesweeper.lab3 {
 
     opens com.strinadkakirill.javalabs.lab3_minesweeper.lab3 to javafx.fxml;
     exports com.strinadkakirill.javalabs.lab3_minesweeper.lab3;
+    exports com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Statistics;
+    opens com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Statistics to javafx.fxml;
 }

@@ -1,4 +1,4 @@
-package com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model;
+package com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell;
 
 
 //будет хранить разные состояния ячейки и ее координаты

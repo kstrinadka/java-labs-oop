@@ -1,8 +1,9 @@
 package com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.Cell;
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellConditions;
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellState;
+
 import java.util.*;
 
 public class Field {
@@ -22,7 +23,7 @@ public class Field {
         String gameMode = choosingGameMode();
 
         createMainField();
-        setMines();           //пока что ставим 10 мин на поле 9*9
+        setMines();
 
     }
 
@@ -57,6 +58,7 @@ public class Field {
     }
 
 
+    //вроде это не надо
     public void setCell(int x, int y, boolean hasMine) {
         //если координаты начинаются с 0, то отнимаем 1
         x = y = x-1;
@@ -67,9 +69,8 @@ public class Field {
     }
 
 
-    /** установить мину в заданных координатах
-     * @param x
-     * @param y
+    /**
+     * установить мину в заданных координатах
      */
     private void setOneMine(int x, int y) {
         //если координаты начинаются с 0, то отнимаем 1
@@ -104,6 +105,7 @@ public class Field {
         System.out.println("не прошли условия по кол-ву мин");
         return 10;
     }
+    //вроде это не нужно
 
 
     /**
@@ -156,6 +158,15 @@ public class Field {
         Cell oneCell = this.mainField.get(x*this.widthOfField + y);
 
         return oneCell;
+    }
+
+
+    /**
+     * метод изменения состояния ячейки по индексу {x, y} на заданное состояние.
+     * @param cellState - состояние ячейки, которое мы установим в заданные координаты
+     */
+    void setCell(int x, int y, CellState cellState) {
+
     }
 
 
@@ -239,6 +250,10 @@ public class Field {
 
     }
 
+
+    /**
+     * Создает поле для режима Specific
+     */
     private void installationSpecificMode() {
         Scanner myInput = new Scanner( System.in );
         int widthOfField = 0, heightOfField = 0;
@@ -267,6 +282,53 @@ public class Field {
         this.heightOfField = heightOfField;
         this.numberOfMines = numberOfMines;
     }
+
+
+    /**
+     * При открытии пустой ячейки – автоматически открываются все соседние пустые ячейки, так же дополнительно
+     * открываются прилежащие информационные ячейки (ячейки с количеством заминированных соседей).
+     */
+    private void openNearbyEmptyCells(int x, int y) {
+
+    }
+
+
+    /**
+     * открыть ячейку по заданным координатам
+     * @param x  – индекс строки.
+     * @param y - индекс столбца
+     */
+    public void openCell(int x, int y) {
+
+
+    }
+
+
+    /**
+     * пометить ячейку, с заданными координатами, как ячейку содержащую мину.
+     * открытие помеченной ячейки в игровом процессе будет запрещено до тех пор, пока метка не снята.
+     */
+    public void markCell(int x, int y) {
+
+    }
+
+
+    /**
+     * метод проверки расстановки флагов.
+     * Возвращаемое значение: true – если все метки на поле расставлены верно, false – в противном случае.
+     */
+    public boolean flagsCorrect() {
+
+        return true;
+    }
+
+
+
+
+
+
+
+
 
 
 }

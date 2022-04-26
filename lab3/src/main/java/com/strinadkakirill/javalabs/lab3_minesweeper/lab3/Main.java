@@ -16,7 +16,7 @@ public class Main {
 
         field.printMainField();
 
-        //field.choosingGameMode();
+
 
     }
 }
