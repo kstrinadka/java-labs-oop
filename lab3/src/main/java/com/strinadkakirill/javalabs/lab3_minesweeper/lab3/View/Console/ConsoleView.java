@@ -39,7 +39,7 @@ public class ConsoleView {
 
     }
 
-    
+
     /**
      * убрать флаг с ячейки
      */
