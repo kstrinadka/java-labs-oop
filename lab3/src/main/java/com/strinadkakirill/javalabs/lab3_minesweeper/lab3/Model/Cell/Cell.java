@@ -10,6 +10,12 @@ public class Cell {
     private int x_coordinate;
     private int y_coordinate;
 
+    //помечена ли флагом клетка
+    private boolean isFlagged;
+
+    //закрыта ли клетка
+    private boolean isClosed;
+
     //мб сделать enum для возможных состояний ячейки
     private CellConditions condition;
 
@@ -22,6 +28,8 @@ public class Cell {
     public Cell(CellConditions condition, boolean hasMine) {
         this.condition = condition;
         this.hasMine = hasMine;
+        this.isClosed = true;
+        this.isFlagged = false;
     }
 
     public Cell() {
@@ -35,11 +43,17 @@ public class Cell {
         this.y_coordinate = y_coordinate;
         this.condition = condition;
         this.hasMine = hasMine;
+        this.isClosed = true;
+        this.isFlagged = false;
     }
 
     public void plusOneToCell () {
         //System.out.println("сделали +1");
         this.cellNumber++;
+    }
+
+    public boolean isFlagged() {
+        return this.isFlagged;
     }
 
 
@@ -87,5 +101,23 @@ public class Cell {
     public boolean cellHasMine() {
         return this.hasMine;
     }
+
+    public boolean isClosed() {
+        return isClosed;
+    }
+
+    public void openThisCell() {
+        this.isClosed = false;
+    }
+
+    public void changeFlagState() {
+        if (this.isFlagged == true) {
+            this.isFlagged = false;
+        }
+        else {
+            this.isFlagged = true;
+        }
+    }
+
 
 }

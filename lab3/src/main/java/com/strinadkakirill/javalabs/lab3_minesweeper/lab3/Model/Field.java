@@ -14,6 +14,8 @@ public class Field {
     private int heightOfField = 9;      //y
     private int numberOfMines = 10;
 
+    private int flagsAmount;
+
 
     ArrayList<Cell> mainField = new ArrayList<>();
 
@@ -39,6 +41,7 @@ public class Field {
         this.widthOfField = width;
 
         this.numberOfMines = minesAmount;
+        this.flagsAmount = minesAmount;
 
         //fillTheFieldByRandom(minesAmount);
 
@@ -376,6 +379,27 @@ public class Field {
 
     }
 
+    /**
+     * @return Успех или неуспех операции
+     */
+    public boolean decreaseFlagsAmount() {
+        if (this.flagsAmount <= 0) {
+            return false;
+        }
+        this.flagsAmount--;
+        return true;
+    }
+
+    /**
+     * @return  Успех или неуспех операции
+     */
+    public boolean increaseFlagsAmount() {
+        if (this.flagsAmount >= this.numberOfMines) {
+            return false;
+        }
+        this.flagsAmount++;
+        return true;
+    }
 
 
     /**
