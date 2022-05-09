@@ -44,7 +44,7 @@ public class Field {
 
         createMainField();
         setMines();
-        //setNumbersForWholeFieldAroundMines();
+        setNumbersForWholeFieldAroundMines();
     }
 
 
@@ -96,8 +96,8 @@ public class Field {
      */
     private void setOneMine(int y_coord, int x_coord) {
         //если координаты начинаются с 0, то отнимаем 1
-        y_coord = y_coord - 1;
-        x_coord = x_coord - 1;
+        /*y_coord = y_coord - 1;
+        x_coord = x_coord - 1;*/
 
         Cell cell = new Cell(y_coord, x_coord, CellConditions.CLOSED, true);
 
@@ -140,8 +140,8 @@ public class Field {
 
         myBreakLabel:
         while (n > 0) {
-            for (int i = 1; i <= this.heightOfField; i++)
-                for (int j = 1; j <= this.widthOfField; j++)
+            for (int i = 0; i <= this.heightOfField; i++)
+                for (int j = 0; j <= this.widthOfField; j++)
                 {
                     int x = random.nextInt(100);
                     if (x % 99 == 0) {
@@ -175,8 +175,12 @@ public class Field {
      * @return
      */
     public Cell getCell(int y_coord, int x_coord) {
-        y_coord--;
-        x_coord--;
+        //y_coord--;
+        //x_coord--;
+        if (y_coord >= heightOfField || x_coord >= widthOfField) {
+            System.out.println("нерправильные координаты!!!");
+        }
+
         Cell oneCell = this.mainField.get(y_coord*this.widthOfField + x_coord);
 
         return oneCell;
@@ -313,9 +317,15 @@ public class Field {
         for (int i = 0; i < this.heightOfField; ++i) {
             for (int j = 0; j < this.widthOfField; j++) {
                 Cell a = this.mainField.get(this.widthOfField*i + j);
-                int x_coord = a.getX_coordinate();
-                int y_coord = a.getY_coordinate();
-                addNumberAruondOneMine(x_coord, y_coord);
+                if (a.cellHasMine()) {
+                    System.out.println("добавление цифры");
+
+                    //в cell почему-то неправилно хранятся координаты
+                    int x_coord = a.getX_coordinate();
+                    int y_coord = a.getY_coordinate();
+                    addNumberAruondOneMine(j, i);
+                }
+
             }
             System.out.print("\n");
         }
@@ -326,9 +336,9 @@ public class Field {
      * Добавляет единичку вокруг конкретной мины
      */
     private void addNumberAruondOneMine (int x_coord, int y_coord) {
-        Cell a = getCell(y_coord + 1, x_coord + 1);
+        Cell a = getCell(y_coord, x_coord);
 
-        if (x_coord < 0 || y_coord < 0 || a.cellHasMine()) {
+        if (x_coord < 0 || y_coord < 0) {
             return;
         }
 
@@ -345,11 +355,17 @@ public class Field {
     }
 
     private void plusOneToConcretCell (int x_coord, int y_coord) {
-        if (x_coord < 0 || y_coord < 0) {
+        if (x_coord < 0 || y_coord < 0 || x_coord >= widthOfField || y_coord >= heightOfField) {
             return;
         }
 
-        Cell a = getCell(y_coord + 1, x_coord + 1);
+        //System.out.println("сейчас будем делать +1");
+
+        Cell a = getCell(y_coord, x_coord);
+        if (a.cellHasMine()) {
+            return;
+        }
+
         a.plusOneToCell();
 
     }

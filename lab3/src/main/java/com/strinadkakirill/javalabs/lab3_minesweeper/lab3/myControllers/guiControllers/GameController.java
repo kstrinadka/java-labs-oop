@@ -350,7 +350,7 @@ public class GameController {
                 int y_coord = cellOfGridPane.y_coord();
 
                 // +1 т.к. там есть какой-то сдвиг к класса Field
-                Cell modelcell = field.getCell(y_coord + 1, x_coord + 1);
+                Cell modelcell = field.getCell(y_coord, x_coord);
 
                 ImageView imageView = cellOfGridPane.image();
                 if (modelcell.cellHasMine()) {

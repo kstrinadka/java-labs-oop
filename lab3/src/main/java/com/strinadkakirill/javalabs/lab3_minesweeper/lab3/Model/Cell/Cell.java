@@ -27,6 +27,7 @@ public class Cell {
     public Cell() {
         this.condition = CellConditions.CLOSED;
         this.hasMine = false;
+        this.cellNumber = 0;
     }
 
     public Cell(int x_coordinate, int y_coordinate, CellConditions condition, boolean hasMine) {
@@ -37,6 +38,7 @@ public class Cell {
     }
 
     public void plusOneToCell () {
+        //System.out.println("сделали +1");
         this.cellNumber++;
     }
 
