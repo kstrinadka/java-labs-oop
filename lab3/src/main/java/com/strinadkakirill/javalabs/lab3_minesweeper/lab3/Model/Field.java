@@ -140,8 +140,8 @@ public class Field {
 
         myBreakLabel:
         while (n > 0) {
-            for (int i = 0; i <= this.heightOfField; i++)
-                for (int j = 0; j <= this.widthOfField; j++)
+            for (int i = 0; i < this.heightOfField; i++)
+                for (int j = 0; j < this.widthOfField; j++)
                 {
                     int x = random.nextInt(100);
                     if (x % 99 == 0) {
@@ -178,7 +178,7 @@ public class Field {
         //y_coord--;
         //x_coord--;
         if (y_coord >= heightOfField || x_coord >= widthOfField) {
-            System.out.println("нерправильные координаты!!!");
+            System.out.println("нерправильные координаты!!! (" + x_coord + ", " + y_coord + ") ");
         }
 
         Cell oneCell = this.mainField.get(y_coord*this.widthOfField + x_coord);

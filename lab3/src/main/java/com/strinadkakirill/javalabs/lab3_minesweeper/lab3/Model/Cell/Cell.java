@@ -42,6 +42,23 @@ public class Cell {
         this.cellNumber++;
     }
 
+
+    /**
+     * @return Есть ли внутри этой клетки цифра
+     */
+    public boolean hasNumber () {
+        if (this.cellNumber > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public int getCellNumber () {
+        return this.cellNumber;
+    }
+
     @Override
     public String toString() {
 

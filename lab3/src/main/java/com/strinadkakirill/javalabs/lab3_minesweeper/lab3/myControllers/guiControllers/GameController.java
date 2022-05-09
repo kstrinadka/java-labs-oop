@@ -86,8 +86,8 @@ public class GameController {
 
         listOfCellsInFieldPane = new ArrayList<>();
 
-        int numCols = 30 ;
-        int numRows = 24 ;
+        int numCols = 9 ;
+        int numRows = 9 ;
 
         fillTheField(numRows, numCols, 10, "nick", -1, -1);
 
@@ -342,8 +342,9 @@ public class GameController {
      */
     public void showField(ActionEvent actionEvent) {
 
-        if (!fieldIsShown) {
+        if (!this.fieldIsShown) {
 
+            this.fieldIsShown = true;
 
             for (CellOfGridPane cellOfGridPane: listOfCellsInFieldPane) {
                 int x_coord = cellOfGridPane.x_coord();
@@ -369,6 +370,75 @@ public class GameController {
 
                     //fieldPane.add(imageView, x_coord, y_coord);
                 }
+                else if (modelcell.hasNumber()) {
+                    if (modelcell.getCellNumber() == 1) {
+                        //заменяем картинку
+                        imageView.setImage(new Image(this.getClass().
+                                getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num1.png")));
+                        imageView.setFitWidth(sizeOfCell);
+                        imageView.setFitHeight(sizeOfCell);
+
+                    }
+                    if (modelcell.getCellNumber() == 2) {
+                        //заменяем картинку
+                        imageView.setImage(new Image(this.getClass().
+                                getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num2.png")));
+                        imageView.setFitWidth(sizeOfCell);
+                        imageView.setFitHeight(sizeOfCell);
+                    }
+                    if (modelcell.getCellNumber() == 3) {
+                        //заменяем картинку
+                        imageView.setImage(new Image(this.getClass().
+                                getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num3.png")));
+                        imageView.setFitWidth(sizeOfCell);
+                        imageView.setFitHeight(sizeOfCell);
+                    }
+                    if (modelcell.getCellNumber() == 4) {
+                        //заменяем картинку
+                        imageView.setImage(new Image(this.getClass().
+                                getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num4.png")));
+                        imageView.setFitWidth(sizeOfCell);
+                        imageView.setFitHeight(sizeOfCell);
+
+                    }
+                    if (modelcell.getCellNumber() == 5) {
+                        //заменяем картинку
+                        imageView.setImage(new Image(this.getClass().
+                                getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num5.png")));
+                        imageView.setFitWidth(sizeOfCell);
+                        imageView.setFitHeight(sizeOfCell);
+
+                    }
+                    if (modelcell.getCellNumber() == 6) {
+                        //заменяем картинку
+                        imageView.setImage(new Image(this.getClass().
+                                getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num6.png")));
+                        imageView.setFitWidth(sizeOfCell);
+                        imageView.setFitHeight(sizeOfCell);
+
+                    }
+                    if (modelcell.getCellNumber() == 7) {
+                        //заменяем картинку
+                        imageView.setImage(new Image(this.getClass().
+                                getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num7.png")));
+                        imageView.setFitWidth(sizeOfCell);
+                        imageView.setFitHeight(sizeOfCell);
+
+                    }
+                    if (modelcell.getCellNumber() == 8) {
+                        //заменяем картинку
+                        imageView.setImage(new Image(this.getClass().
+                                getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num8.png")));
+                        imageView.setFitWidth(sizeOfCell);
+                        imageView.setFitHeight(sizeOfCell);
+
+                    }
+                    else {
+                        System.out.println("smth wrong with modelcell.getCellNumber()");
+                    }
+
+                }
+
                 else {
                     imageView.setImage(new Image(this.getClass().
                             getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/zero.png")));
@@ -436,6 +506,23 @@ public class GameController {
         }
         else {
 
+            this.fieldIsShown = false;
+
+            for (CellOfGridPane cellOfGridPane: listOfCellsInFieldPane) {
+                int x_coord = cellOfGridPane.x_coord();
+                int y_coord = cellOfGridPane.y_coord();
+
+
+                Cell modelcell = field.getCell(y_coord, x_coord);
+
+                ImageView imageView = cellOfGridPane.image();
+                //заменяем картинку
+                imageView.setImage(new Image(this.getClass().
+                        getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/zero.png")));
+                imageView.setFitWidth(sizeOfCell);
+                imageView.setFitHeight(sizeOfCell);
+
+            }
 
 
         }
