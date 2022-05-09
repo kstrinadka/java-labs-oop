@@ -10,12 +10,16 @@ public class Field {
 
 
     //должны поступать из вне
-    private int widthOfField = 9;       //y
-    private int heightOfField = 9;      //x
+    private int widthOfField = 9;       //x
+    private int heightOfField = 9;      //y
     private int numberOfMines = 10;
 
 
     ArrayList<Cell> mainField = new ArrayList<>();
+
+    public ArrayList<Cell> getMainField() {
+        return mainField;
+    }
 
 
     public Field() {
@@ -24,8 +28,25 @@ public class Field {
 
         createMainField();
         setMines();
+        setNumbersForWholeFieldAroundMines();
+
 
     }
+
+    public Field(int height, int width, int minesAmount) {
+        //field = new int[width][height];
+        this.heightOfField = height;
+        this.widthOfField = width;
+
+        this.numberOfMines = minesAmount;
+
+        //fillTheFieldByRandom(minesAmount);
+
+        createMainField();
+        setMines();
+        //setNumbersForWholeFieldAroundMines();
+    }
+
 
 
     /**
@@ -38,7 +59,8 @@ public class Field {
 
         for (int i = 0; i < this.heightOfField; ++i) {
             for (int j = 0; j < this.widthOfField; j++) {
-                this.mainField.set(this.widthOfField*i + j, new Cell(CellConditions.CLOSED, false));
+                //this.mainField.set(this.widthOfField*i + j, new Cell(CellConditions.CLOSED, false));
+                this.mainField.set(this.widthOfField*i + j, new Cell(j, i, CellConditions.CLOSED, false));
             }
         }
     }
@@ -59,27 +81,27 @@ public class Field {
 
 
     //вроде это не надо
-    public void setCell(int x, int y, boolean hasMine) {
+    public void setCell(int y_coord, int x_coord, boolean hasMine) {
         //если координаты начинаются с 0, то отнимаем 1
-        x = y = x-1;
+        y_coord = x_coord = y_coord-1;
 
         Cell cell = new Cell(CellConditions.CLOSED, true);
 
-        this.mainField.set(x*this.widthOfField + y, cell);
+        this.mainField.set(y_coord*this.widthOfField + x_coord, cell);
     }
 
 
     /**
      * установить мину в заданных координатах
      */
-    private void setOneMine(int x, int y) {
+    private void setOneMine(int y_coord, int x_coord) {
         //если координаты начинаются с 0, то отнимаем 1
-        x = x - 1;
-        y = y - 1;
+        y_coord = y_coord - 1;
+        x_coord = x_coord - 1;
 
-        Cell cell = new Cell(CellConditions.CLOSED, true);
+        Cell cell = new Cell(y_coord, x_coord, CellConditions.CLOSED, true);
 
-        this.mainField.set(x*this.widthOfField + y, cell);
+        this.mainField.set(y_coord*this.widthOfField + x_coord, cell);
     }
 
 
@@ -121,8 +143,8 @@ public class Field {
             for (int i = 1; i <= this.heightOfField; i++)
                 for (int j = 1; j <= this.widthOfField; j++)
                 {
-                    int x = random.nextInt(23);
-                    if (x % 7 == 0) {
+                    int x = random.nextInt(100);
+                    if (x % 99 == 0) {
                         //проверяем нет ли уже тут мины и только потом ее ставим
                         if (!checkMineHere(i,j)) {
                             setOneMine(i,j);
@@ -142,8 +164,8 @@ public class Field {
      * Проверяем клетку с координатами x y на мину
      * @return - оказалась ли здесь мина
      */
-    boolean checkMineHere (int x, int y) {
-        Cell oneCell = getCell(x, y);
+    public boolean checkMineHere (int y_coord, int x_coord) {
+        Cell oneCell = getCell(y_coord, x_coord);
         return oneCell.cellHasMine();
     }
 
@@ -152,10 +174,10 @@ public class Field {
      * получаем клетку с поля по координатам. (можно для проверки есть там мина или нет)
      * @return
      */
-    Cell getCell(int x, int y) {
-        x--;
-        y--;
-        Cell oneCell = this.mainField.get(x*this.widthOfField + y);
+    public Cell getCell(int y_coord, int x_coord) {
+        y_coord--;
+        x_coord--;
+        Cell oneCell = this.mainField.get(y_coord*this.widthOfField + x_coord);
 
         return oneCell;
     }
@@ -282,6 +304,62 @@ public class Field {
         this.heightOfField = heightOfField;
         this.numberOfMines = numberOfMines;
     }
+
+
+    /**
+     * Расставляет цифры вокруг мин на всем поле
+     */
+    private void setNumbersForWholeFieldAroundMines() {
+        for (int i = 0; i < this.heightOfField; ++i) {
+            for (int j = 0; j < this.widthOfField; j++) {
+                Cell a = this.mainField.get(this.widthOfField*i + j);
+                int x_coord = a.getX_coordinate();
+                int y_coord = a.getY_coordinate();
+                addNumberAruondOneMine(x_coord, y_coord);
+            }
+            System.out.print("\n");
+        }
+    }
+
+
+    /**
+     * Добавляет единичку вокруг конкретной мины
+     */
+    private void addNumberAruondOneMine (int x_coord, int y_coord) {
+        Cell a = getCell(y_coord + 1, x_coord + 1);
+
+        if (x_coord < 0 || y_coord < 0 || a.cellHasMine()) {
+            return;
+        }
+
+        plusOneToConcretCell(x_coord - 1, y_coord - 1);
+        plusOneToConcretCell(x_coord - 1, y_coord);
+        plusOneToConcretCell(x_coord, y_coord - 1);
+        plusOneToConcretCell(x_coord - 1, y_coord + 1);
+        plusOneToConcretCell(x_coord + 1, y_coord - 1);
+        plusOneToConcretCell(x_coord + 1, y_coord + 1);
+        plusOneToConcretCell(x_coord + 1, y_coord);
+        plusOneToConcretCell(x_coord, y_coord + 1);
+
+
+    }
+
+    private void plusOneToConcretCell (int x_coord, int y_coord) {
+        if (x_coord < 0 || y_coord < 0) {
+            return;
+        }
+
+        Cell a = getCell(y_coord + 1, x_coord + 1);
+        a.plusOneToCell();
+
+    }
+
+
+    private void addNumberForThisCellCoordinates(int x_coord, int y_coord) {
+        Cell cell = this.getCell(y_coord, x_coord);
+
+    }
+
 
 
     /**

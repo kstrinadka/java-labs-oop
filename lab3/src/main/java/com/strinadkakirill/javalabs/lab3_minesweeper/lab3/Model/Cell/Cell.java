@@ -13,6 +13,9 @@ public class Cell {
     //мб сделать enum для возможных состояний ячейки
     private CellConditions condition;
 
+    //показывает цифру в этой клетке (если 0, то это мина или пустая)
+    private int cellNumber;
+
     boolean hasMine;
 
 
@@ -26,13 +29,36 @@ public class Cell {
         this.hasMine = false;
     }
 
+    public Cell(int x_coordinate, int y_coordinate, CellConditions condition, boolean hasMine) {
+        this.x_coordinate = x_coordinate;
+        this.y_coordinate = y_coordinate;
+        this.condition = condition;
+        this.hasMine = hasMine;
+    }
+
+    public void plusOneToCell () {
+        this.cellNumber++;
+    }
+
     @Override
     public String toString() {
 
         if (this.hasMine) {
             return "9";
         }
+        if (this.cellNumber > 0) {
+            Integer a = this.cellNumber;
+            return a.toString();
+        }
         else return "0";
+    }
+
+    public int getX_coordinate() {
+        return x_coordinate;
+    }
+
+    public int getY_coordinate() {
+        return y_coordinate;
     }
 
 

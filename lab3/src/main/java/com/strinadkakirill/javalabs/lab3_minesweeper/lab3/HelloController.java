@@ -1,5 +1,6 @@
 package com.strinadkakirill.javalabs.lab3_minesweeper.lab3;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -19,4 +20,6 @@ public class HelloController {
         welcomeText.setText("нажал на кнопку, значит пидор");
     }
 
+    public void anotherWindowButtonAction(ActionEvent actionEvent) {
+    }
 }
