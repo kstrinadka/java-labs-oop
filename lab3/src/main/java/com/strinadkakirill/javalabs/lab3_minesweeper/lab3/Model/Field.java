@@ -61,8 +61,7 @@ public class Field {
         System.out.println("capacity of field = " + this.mainField.size());
 
         for (int i = 0; i < this.heightOfField; ++i) {
-            for (int j = 0; j < this.widthOfField; j++) {
-                //this.mainField.set(this.widthOfField*i + j, new Cell(CellConditions.CLOSED, false));
+            for (int j = 0; j < this.widthOfField; ++j) {
                 this.mainField.set(this.widthOfField*i + j, new Cell(j, i, CellConditions.CLOSED, false));
             }
         }
@@ -85,11 +84,7 @@ public class Field {
 
     //вроде это не надо
     public void setCell(int y_coord, int x_coord, boolean hasMine) {
-        //если координаты начинаются с 0, то отнимаем 1
-        y_coord = x_coord = y_coord-1;
-
         Cell cell = new Cell(CellConditions.CLOSED, true);
-
         this.mainField.set(y_coord*this.widthOfField + x_coord, cell);
     }
 
@@ -98,12 +93,8 @@ public class Field {
      * установить мину в заданных координатах
      */
     private void setOneMine(int y_coord, int x_coord) {
-        //если координаты начинаются с 0, то отнимаем 1
-        /*y_coord = y_coord - 1;
-        x_coord = x_coord - 1;*/
 
-        Cell cell = new Cell(y_coord, x_coord, CellConditions.CLOSED, true);
-
+        Cell cell = new Cell(x_coord, y_coord, CellConditions.CLOSED, true);
         this.mainField.set(y_coord*this.widthOfField + x_coord, cell);
     }
 
@@ -178,14 +169,11 @@ public class Field {
      * @return
      */
     public Cell getCell(int y_coord, int x_coord) {
-        //y_coord--;
-        //x_coord--;
-        if (y_coord >= heightOfField || x_coord >= widthOfField) {
+        if (y_coord >= heightOfField || x_coord >= widthOfField || y_coord < 0 || x_coord < 0) {
             System.out.println("нерправильные координаты!!! (" + x_coord + ", " + y_coord + ") ");
         }
 
         Cell oneCell = this.mainField.get(y_coord*this.widthOfField + x_coord);
-
         return oneCell;
     }
 
@@ -323,14 +311,9 @@ public class Field {
                 if (a.cellHasMine()) {
                     System.out.println("добавление цифры");
 
-                    //в cell почему-то неправилно хранятся координаты
-                    int x_coord = a.getX_coordinate();
-                    int y_coord = a.getY_coordinate();
                     addNumberAruondOneMine(j, i);
                 }
-
             }
-            System.out.print("\n");
         }
     }
 
@@ -339,7 +322,6 @@ public class Field {
      * Добавляет единичку вокруг конкретной мины
      */
     private void addNumberAruondOneMine (int x_coord, int y_coord) {
-        Cell a = getCell(y_coord, x_coord);
 
         if (x_coord < 0 || y_coord < 0) {
             return;
@@ -357,12 +339,13 @@ public class Field {
 
     }
 
+    /**
+     *  Делает +1 в эту клетку
+     */
     private void plusOneToConcretCell (int x_coord, int y_coord) {
         if (x_coord < 0 || y_coord < 0 || x_coord >= widthOfField || y_coord >= heightOfField) {
             return;
         }
-
-        //System.out.println("сейчас будем делать +1");
 
         Cell a = getCell(y_coord, x_coord);
         if (a.cellHasMine()) {
@@ -370,13 +353,15 @@ public class Field {
         }
 
         a.plusOneToCell();
-
     }
 
 
-    private void addNumberForThisCellCoordinates(int x_coord, int y_coord) {
-        Cell cell = this.getCell(y_coord, x_coord);
+    public int getFlagsAmount() {
+        return this.flagsAmount;
+    }
 
+    public int getNumberOfMines() {
+        return this.numberOfMines;
     }
 
     /**
@@ -401,6 +386,10 @@ public class Field {
         return true;
     }
 
+    public void resetFlagsAmount () {
+        this.flagsAmount = this.numberOfMines;
+    }
+
 
     /**
      * При открытии пустой ячейки – автоматически открываются все соседние пустые ячейки, так же дополнительно
@@ -408,6 +397,16 @@ public class Field {
      */
     private void openNearbyEmptyCells(int x, int y) {
 
+    }
+
+    public void deleteFlag(Cell cell) {
+        cell.deleteFlag();
+        increaseFlagsAmount();
+    }
+
+    public void setFlag(Cell cell) {
+        cell.setFlag();
+        decreaseFlagsAmount();
     }
 
 

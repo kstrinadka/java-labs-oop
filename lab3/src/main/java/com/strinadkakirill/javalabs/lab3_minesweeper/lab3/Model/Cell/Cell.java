@@ -52,9 +52,7 @@ public class Cell {
         this.cellNumber++;
     }
 
-    public boolean isFlagged() {
-        return this.isFlagged;
-    }
+
 
 
     /**
@@ -99,15 +97,34 @@ public class Cell {
      * @return - есть мина в этой клетке или нет
      */
     public boolean cellHasMine() {
+
         return this.hasMine;
     }
 
     public boolean isClosed() {
+
+        if (this.condition.equals(CellConditions.CLOSED)) {
+            return true;
+        }
+        //else return false;
+
         return isClosed;
     }
 
+    public CellConditions getState(){
+        return this.condition;
+    }
+
     public void openThisCell() {
+        this.condition = CellConditions.OPENED;
+
         this.isClosed = false;
+    }
+
+    public void setClosed() {
+        this.condition = CellConditions.CLOSED;
+
+        this.isClosed = true;
     }
 
     public void changeFlagState() {
@@ -117,7 +134,33 @@ public class Cell {
         else {
             this.isFlagged = true;
         }
+
+        if (this.condition.equals(CellConditions.CLOSED)) {
+            this.condition = CellConditions.FLAG;
+        }
+        else if (this.condition.equals(CellConditions.FLAG)) {
+            this.condition = CellConditions.CLOSED;
+        }
     }
 
+    public boolean isFlagged() {
+
+        if (this.condition.equals(CellConditions.CLOSED)) {
+            return false;
+        }
+        else if (this.condition.equals(CellConditions.FLAG)) {
+            return true;
+        }
+
+        return this.isFlagged;
+    }
+
+    public void setFlag() {
+        this.condition = CellConditions.FLAG;
+    }
+
+    public void deleteFlag() {
+        this.condition = CellConditions.CLOSED;
+    }
 
 }
