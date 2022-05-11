@@ -3,11 +3,15 @@ package com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.Cell;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellConditions;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellState;
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TemplateTimer;
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TimerListener;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.Exchanger;
 
 public class Field {
 
@@ -15,6 +19,13 @@ public class Field {
     private int widthOfField = 9;       //x
     private int heightOfField = 9;      //y
     private int numberOfMines = 10;
+
+    private String timerString;
+
+    private TemplateTimer templateTimer;
+    private Exchanger<String> exchanger;
+
+    private String time;
 
     private int flagsAmount;
 
@@ -37,6 +48,7 @@ public class Field {
         setNumbersForWholeFieldAroundMines();
 
         this.correctFlagsOnMines = numberOfMines;
+        this.templateTimer = createTimerOnModelField();
     }
 
     public Field(int height, int width, int minesAmount) {
@@ -52,6 +64,7 @@ public class Field {
         createMainField();
         setMines();
         setNumbersForWholeFieldAroundMines();
+        this.templateTimer = createTimerOnModelField();
     }
 
 
@@ -472,6 +485,44 @@ public class Field {
         //if ()
 
     }
+
+    public TemplateTimer createTimerOnModelField (){
+        TemplateTimer templateTimer = new TemplateTimer();
+
+        System.out.println("создался таймер");
+        templateTimer.addListener(new TimerListener() {
+            @Override
+            public void onReadingChange() {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        setTimerText(templateTimer.getResult());
+                    }
+                });
+            }
+        });
+
+        setTimer(templateTimer);
+
+        return templateTimer;
+    }
+
+    public TemplateTimer getTemplateTimerFromModel() {
+        return this.templateTimer;
+    }
+
+    public void setTimerText(String time) {
+        timerString = time;
+    }
+
+    public String getTimerString() {
+        return timerString;
+    }
+
+    public void setTimer(TemplateTimer templateTimer) {
+        this.templateTimer = templateTimer;
+    }
+
 
 
     /**

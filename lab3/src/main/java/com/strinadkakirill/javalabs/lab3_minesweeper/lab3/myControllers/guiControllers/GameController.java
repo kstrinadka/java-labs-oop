@@ -12,6 +12,8 @@ import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellState;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Field;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TemplateTimer;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TimerListener;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -31,6 +33,7 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import javafx.util.Duration;
 
 public class GameController {
 
@@ -43,6 +46,8 @@ public class GameController {
 
     @FXML
     private URL location;
+
+    Timeline timeLineChecker;
 
     private boolean fieldIsShown = false;
 
@@ -81,6 +86,9 @@ public class GameController {
 
     @FXML
     private Label timerLabel;
+
+
+    private String timerString;
 
     @FXML
     private Text winText;
@@ -138,27 +146,33 @@ public class GameController {
 
 
     private void createTimerOnFieldPane(Stage currentStage) {
-        TemplateTimer templateTimer = new TemplateTimer();
-        templateTimer.addListener(new TimerListener() {
-            @Override
-            public void onReadingChange() {
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        setTimerLabel(templateTimer.getResult());
-                    }
-                });
-            }
-        });
+        this.templateTimer = field.getTemplateTimerFromModel();
 
-        setTimer(templateTimer);
+        //setTimer(templateTimer);
 
+
+        //возможно нужно убрать выключение времени в контроллере. Пусть оно будет в модели
         currentStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent windowEvent) {
                 templateTimer.shutdown();
             }
         });
+
+        Timeline oneSecondWonder = new Timeline(
+                new KeyFrame(Duration.seconds(0.5),
+                        new EventHandler<ActionEvent>() {
+
+                            @Override
+                            public void handle(ActionEvent event) {
+                                //System.out.println("this is called every 1 seconds on UI thread");
+                                setTimerLabel(field.getTimerString());
+
+                            }
+                        }));
+        oneSecondWonder.setCycleCount(Timeline.INDEFINITE);
+        oneSecondWonder.play();
+        this.timeLineChecker = oneSecondWonder;
 
     }
 
@@ -282,6 +296,7 @@ public class GameController {
      */
     private void showDefeat () {
         templateTimer.shutdown();
+        timeLineChecker.stop();
         defeatCondition = true;
         loseText.setDisable(false);
 
@@ -290,6 +305,7 @@ public class GameController {
 
     private void showVictory() {
         templateTimer.shutdown();
+        timeLineChecker.stop();
     }
 
 
@@ -727,6 +743,7 @@ public class GameController {
 
 
             templateTimer.shutdown();
+            timeLineChecker.stop();
 
             stage.setScene(new Scene(root));
             stage.show();
