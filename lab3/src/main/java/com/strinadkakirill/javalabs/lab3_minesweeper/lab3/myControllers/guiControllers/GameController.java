@@ -9,7 +9,9 @@ import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.Cell;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellConditions;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellState;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Field;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -25,12 +27,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class GameController {
 
     public AnchorPane rootElementGame;
     @FXML
     private ResourceBundle resources;
+
+    @FXML
+    private Label flagNum;
 
     @FXML
     private URL location;
@@ -60,8 +66,6 @@ public class GameController {
     @FXML
     private GridPane fieldPane;
 
-    @FXML
-    private Label flagNum;
 
     @FXML
     private ImageView imageView00;
@@ -146,6 +150,32 @@ public class GameController {
 
     public void initialize() {
 
+        //Stage stage = (Stage) fieldPane.getScene().getWindow();
+        /*
+
+        TemplateTimer templateTimer = new TemplateTimer();
+        templateTimer.addListener(new TimerListener() {
+            @Override
+            public void onReadingChange() {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        gameWindowController.setTimerLabel(templateTimer.getResult());
+                    }
+                });
+            }
+        });
+
+        gameWindowController.setTimer(templateTimer);
+
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent windowEvent) {
+                templateTimer.shutdown();
+            }
+        });*/
+
+
 
         listOfCellsInFieldPane = new ArrayList<>();
 
@@ -200,8 +230,9 @@ public class GameController {
             if (event.getButton() == MouseButton.PRIMARY) {
                 //openTheCell(row, column);
                 System.out.printf("Mouse left click cell [%d, %d]%n", colIndex, rowIndex);
-
-                tryToOpenTheCell(rowIndex, colIndex);
+                if (fieldIsShown == false) {
+                    tryToOpenTheCell(rowIndex, colIndex);
+                }
             }
             if (event.getButton() == MouseButton.SECONDARY) {
                 System.out.printf("Mouse right click cell [%d, %d]%n", colIndex, rowIndex);
@@ -249,6 +280,7 @@ public class GameController {
 
     void deleteFlagGUI(Cell modelcell, ImageView imageView) {
         field.deleteFlag(modelcell);
+        flagNum.setText(Integer.toString(field.getFlagsAmount()));
 
         imageView.setImage(new Image(this.getClass().
                 getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/closed.png")));
@@ -258,6 +290,7 @@ public class GameController {
 
     void setFlagGUI(Cell modelcell, ImageView imageView) {
         field.setFlag(modelcell);
+        flagNum.setText(Integer.toString(field.getFlagsAmount()));
 
         imageView.setImage(new Image(this.getClass().
                 getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/flaged.png")));
@@ -298,6 +331,8 @@ public class GameController {
                 modelcell.openThisCell();
                 ImageView imageView = cellOfGridPane.image();
 
+                showWholeField();
+
                 imageView.setImage(new Image(this.getClass().
                         getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/bombed.png")));
                 System.out.println("поставилась картинка взорванной мины");
@@ -327,7 +362,13 @@ public class GameController {
         Cell modelcell = field.getCell(y_coord, x_coord);
 
         if (!modelcell.isFlagged()) {
-            modelcell.openThisCell();
+            field.openCell(modelcell);
+            //modelcell.openThisCell();
+            if(modelcell.getCellNumber() == 0 && !modelcell.cellHasMine()) {
+                // если 0, то проверяем ближайшие клетки
+                checkWholeFieldAndDraw();
+            }
+
             ImageView imageView = cellOfGridPane.image();
 
             imageView.setImage(chooseRightImageToOpenCell(modelcell));
@@ -337,6 +378,122 @@ public class GameController {
 
 
     }
+
+
+    /**
+     * Заново отрисовывает все поле
+     */
+    private void checkWholeFieldAndDraw() {
+
+        for (CellOfGridPane cellOfGridPane: listOfCellsInFieldPane) {
+            int x_coord = cellOfGridPane.x_coord();
+            int y_coord = cellOfGridPane.y_coord();
+
+            Cell modelcell = field.getCell(y_coord, x_coord);
+            if (modelcell.getState().equals(CellConditions.OPENED)) {
+
+                //modelcell.openThisCell();
+                ImageView imageView = cellOfGridPane.image();
+
+                imageView.setImage(chooseRightImageForConcreteCell(modelcell));
+                imageView.setFitWidth(sizeOfCell);
+                imageView.setFitHeight(sizeOfCell);
+
+            }
+
+
+
+        }
+    }
+
+
+    /**
+     * Ставит картинку по состоянию ячейки
+     */
+    private Image chooseRightImageForConcreteCell (Cell modelcell) {
+
+        Image image = null;
+
+        if (modelcell.getState().equals(CellConditions.CLOSED)) {
+            //заменяем картинку
+            image = new Image(this.getClass().
+                    getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/closed.png"));
+            return image;
+        }
+
+
+        if (modelcell.getState().equals(CellConditions.OPENED) && modelcell.getCellNumber() == 0
+            && !modelcell.cellHasMine())
+        {
+
+            //заменяем картинку
+            image = new Image(this.getClass().
+                    getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/zero.png"));
+
+        }
+        else if (modelcell.hasNumber() && modelcell.getState().equals(CellConditions.OPENED)) {
+            if (modelcell.getCellNumber() == 1) {
+                //заменяем картинку
+                image = new Image(this.getClass().
+                        getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num1.png"));
+
+            }
+            if (modelcell.getCellNumber() == 2) {
+                //заменяем картинку
+                image = new Image(this.getClass().
+                        getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num2.png"));
+
+            }
+            if (modelcell.getCellNumber() == 3) {
+                //заменяем картинку
+                image = new Image(this.getClass().
+                        getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num3.png"));
+
+            }
+            if (modelcell.getCellNumber() == 4) {
+
+
+                //заменяем картинку
+                image = new Image(this.getClass().
+                        getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num4.png"));
+
+            }
+            if (modelcell.getCellNumber() == 5) {
+
+                //заменяем картинку
+                image = new Image(this.getClass().
+                        getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num5.png"));
+
+            }
+            if (modelcell.getCellNumber() == 6) {
+
+                //заменяем картинку
+                image = new Image(this.getClass().
+                        getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num6.png"));
+
+            }
+            if (modelcell.getCellNumber() == 7) {
+
+                //заменяем картинку
+                image = new Image(this.getClass().
+                        getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num7.png"));
+
+            }
+            if (modelcell.getCellNumber() == 8) {
+
+                //заменяем картинку
+                image = new Image(this.getClass().
+                        getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num8.png"));
+            }
+
+        }
+
+
+        return image;
+    }
+
+
+
 
     /**
      * Возвращает правильную картинку при открытии ячейки
@@ -563,7 +720,10 @@ public class GameController {
      * Открывает все поле для просмотра и закрывает
      */
     public void showField(ActionEvent actionEvent) {
+        showWholeField();
+    }
 
+    public void showWholeField() {
         if (!this.fieldIsShown) {
 
             field.resetFlagsAmount();
@@ -606,7 +766,6 @@ public class GameController {
             }
 
         }
-
     }
 
     public void buttonBackAction(ActionEvent actionEvent) {

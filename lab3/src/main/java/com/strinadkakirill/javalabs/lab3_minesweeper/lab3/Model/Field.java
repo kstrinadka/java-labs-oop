@@ -3,11 +3,21 @@ package com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.Cell;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellConditions;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellState;
+import javafx.animation.Timeline;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Field {
 
+
+
+    //Timeline timeline;
+
+    //LocalTime time = LocalTime.parse("00:00:00");
+
+    //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     //должны поступать из вне
     private int widthOfField = 9;       //x
@@ -395,7 +405,25 @@ public class Field {
      * При открытии пустой ячейки – автоматически открываются все соседние пустые ячейки, так же дополнительно
      * открываются прилежащие информационные ячейки (ячейки с количеством заминированных соседей).
      */
-    private void openNearbyEmptyCells(int x, int y) {
+    private void openNearbyEmptyCells(Cell cell) {
+        int x_coord = cell.getX_coordinate();
+        int y_coord = cell.getY_coordinate();
+
+        for (int i = -1; i <= 1; ++i) {
+            for (int j = -1; j <= 1; ++j) {
+                int new_x_coord = x_coord + j;
+                int new_y_coord = y_coord + i;
+                if (new_x_coord >= 0 && new_y_coord >= 0 && new_y_coord < heightOfField && new_x_coord <widthOfField) {
+                    Cell newCell = getCell(new_y_coord, new_x_coord);
+                    if (newCell.getState().equals(CellConditions.CLOSED) && !newCell.cellHasMine())
+                    {
+                        openCell(newCell);
+                    }
+
+                }
+            }
+        }
+
 
     }
 
@@ -411,11 +439,15 @@ public class Field {
 
 
     /**
-     * открыть ячейку по заданным координатам
-     * @param x  – индекс строки.
-     * @param y - индекс столбца
+     * открыть ячейку и проверить ближайшие
      */
-    public void openCell(int x, int y) {
+    public void openCell(Cell cell) {
+        cell.openThisCell();
+
+
+        if (cell.getCellNumber() == 0 && !cell.cellHasMine()) {
+            openNearbyEmptyCells(cell);
+        }
 
 
     }
