@@ -11,20 +11,15 @@ import java.util.*;
 
 public class Field {
 
-
-
-    //Timeline timeline;
-
-    //LocalTime time = LocalTime.parse("00:00:00");
-
-    //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-
     //должны поступать из вне
     private int widthOfField = 9;       //x
     private int heightOfField = 9;      //y
     private int numberOfMines = 10;
 
     private int flagsAmount;
+
+    //кол-во флагов на минах, если correctFlagsOnMines = 0 => победа
+    private int correctFlagsOnMines;
 
 
     ArrayList<Cell> mainField = new ArrayList<>();
@@ -35,14 +30,13 @@ public class Field {
 
 
     public Field() {
-
         String gameMode = choosingGameMode();
 
         createMainField();
         setMines();
         setNumbersForWholeFieldAroundMines();
 
-
+        this.correctFlagsOnMines = numberOfMines;
     }
 
     public Field(int height, int width, int minesAmount) {
@@ -52,8 +46,8 @@ public class Field {
 
         this.numberOfMines = minesAmount;
         this.flagsAmount = minesAmount;
+        this.correctFlagsOnMines = numberOfMines;
 
-        //fillTheFieldByRandom(minesAmount);
 
         createMainField();
         setMines();
@@ -430,11 +424,37 @@ public class Field {
     public void deleteFlag(Cell cell) {
         cell.deleteFlag();
         increaseFlagsAmount();
+
+        if (cell.cellHasMine()) {
+            this.correctFlagsOnMines++;
+        }
     }
 
     public void setFlag(Cell cell) {
         cell.setFlag();
         decreaseFlagsAmount();
+
+        if (cell.cellHasMine()) {
+            this.correctFlagsOnMines--;
+        }
+    }
+
+    public boolean checkVictory() {
+        if (correctFlagsOnMines == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public void victory(String time) {
+
+        //записать в статистику
+        //остановить игру
+    }
+    public void defeat() {
+
     }
 
 
@@ -449,6 +469,7 @@ public class Field {
             openNearbyEmptyCells(cell);
         }
 
+        //if ()
 
     }
 

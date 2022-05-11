@@ -4,11 +4,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.concurrent.Exchanger;
 
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.Cell;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellConditions;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellState;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Field;
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TemplateTimer;
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TimerListener;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -87,6 +90,13 @@ public class GameController {
 
     int sizeOfCell = 25;
 
+    private TemplateTimer templateTimer;
+    private Exchanger<String> exchanger;
+
+    private String time;
+
+    Stage currentStage;
+
     @FXML
     private GridPane grid ;
     private int mineCount = 10;
@@ -97,7 +107,8 @@ public class GameController {
     private ChoosingGameController controller1;
 
 
-    public void getDataForGame(int fieldX, int fieldY, int mineCount) {
+    public void getDataForGame(int fieldX, int fieldY, int mineCount, Stage stage) {
+        this.currentStage = stage;
         this.fieldX = fieldX;
         this.fieldY = fieldY;
         this.mineCount = mineCount;
@@ -108,36 +119,14 @@ public class GameController {
     }
 
 
+    public void setTimerLabel(String time) {
+        timerLabel.setText(time);
+    }
 
-    /*public GameController(ChoosingGameController controller1, ActionEvent actionEvent) {
-        // We received the first controller, now let's make it usable throughout this controller.
-        this.controller1 = controller1;
+    public void setTimer(TemplateTimer templateTimer) {
+        this.templateTimer = templateTimer;
+    }
 
-
-        // Create the new stage
-        thisStage = new Stage();
-
-        // Load the FXML file
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
-
-            // Set this class as the controller
-
-
-
-            loader.setController(this);
-
-            // Load the scene
-            thisStage.setScene(new Scene(loader.load()));
-
-            // Setup the window/stage
-            thisStage.setTitle("Passing Controllers Example - Layout2");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }*/
 
 
     /**
@@ -148,11 +137,7 @@ public class GameController {
     }
 
 
-    public void initialize() {
-
-        //Stage stage = (Stage) fieldPane.getScene().getWindow();
-        /*
-
+    private void createTimerOnFieldPane(Stage currentStage) {
         TemplateTimer templateTimer = new TemplateTimer();
         templateTimer.addListener(new TimerListener() {
             @Override
@@ -160,20 +145,31 @@ public class GameController {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        gameWindowController.setTimerLabel(templateTimer.getResult());
+                        setTimerLabel(templateTimer.getResult());
                     }
                 });
             }
         });
 
-        gameWindowController.setTimer(templateTimer);
+        setTimer(templateTimer);
 
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+        currentStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent windowEvent) {
                 templateTimer.shutdown();
             }
-        });*/
+        });
+
+    }
+
+
+    public void initialize() {
+
+
+        if (currentStage != null) {
+            createTimerOnFieldPane(currentStage);
+        }
+
 
 
 
@@ -188,23 +184,6 @@ public class GameController {
 
 
 
-        /*for (int i = 0 ; i < numCols ; i++) {
-            ColumnConstraints colConstraints = new ColumnConstraints();
-            //colConstraints.setPrefWidth(100);
-            //colConstraints.setMinWidth(18);
-
-            colConstraints.setHgrow(Priority.ALWAYS);
-            fieldPane.getColumnConstraints().add(colConstraints);
-        }
-
-        for (int i = 0 ; i < numRows ; i++) {
-            RowConstraints rowConstraints = new RowConstraints();
-            //rowConstraints.setPercentHeight(100);
-            //rowConstraints.setMaxHeight(24 * 18);
-
-            rowConstraints.setVgrow(Priority.ALWAYS);
-            fieldPane.getRowConstraints().add(rowConstraints);
-        }*/
 
         for (int i = 0 ; i < numCols ; i++) {
             for (int j = 0; j < numRows; j++) {
@@ -240,8 +219,7 @@ public class GameController {
             }
 
         });
-        //pane.setMaxHeight(25);
-        //pane.setMinHeight(25);
+
         fieldPane.add(pane, colIndex, rowIndex);
         //System.out.println("added pane for (" + colIndex + ", " + rowIndex + ") " );
     }
@@ -303,10 +281,15 @@ public class GameController {
      * Больше нельзя взаимодействовать с полем
      */
     private void showDefeat () {
-
+        templateTimer.shutdown();
         defeatCondition = true;
         loseText.setDisable(false);
 
+    }
+
+
+    private void showVictory() {
+        templateTimer.shutdown();
     }
 
 
@@ -589,48 +572,6 @@ public class GameController {
         System.out.println("paneClickHandler");
         //System.out.printf("Mouse entered cell [%d, %d]%n", colIndex.intValue(), rowIndex.intValue());
     }
-    @FXML
-    public void paneClickHandler2(MouseEvent event) {
-        if (!victoryCondition && !defeatCondition) {
-            Node node = fieldPane.getChildren().get(0);
-            double y = node.getLayoutY();
-            double x = node.getLayoutX();
-
-            /*System.out.println( "x = " + x);
-            System.out.println( "y = " + y);*/
-
-
-            double xOffset = 0 - x;
-            double yOffset = 0 - y;
-            if (event.getPickResult().getIntersectedNode().getParent().
-                    getParent().getClass().getName().equals("javafx.scene.layout.BorderPane")) {
-                int row = (int) ((event.getPickResult().getIntersectedNode().getLayoutX()  + xOffset) / 24);
-                int column = (int) ((event.getPickResult().getIntersectedNode().getLayoutY() + yOffset) / 24);
-
-
-                if (event.getButton() == MouseButton.PRIMARY) {
-                    //openTheCell(row, column);
-                    System.out.println("левый клик по клетке: (" + row + ", " + column + ") ");
-                }
-                if (event.getButton() == MouseButton.SECONDARY) {
-                    System.out.println("правый клик по клетке: (" + row + ", " + column + ") ");
-                    /*if (flagCount > 0) {
-                        setFlag(row, column);
-                    }
-                    else if (flagCount == 0) {
-                        if (field.getValue(row, column) >= FLAG_VALUE) {
-                            Image image = new Image(this.getClass().getResourceAsStream(BLOCK_PATH));
-                            fieldPane.add(new ImageView(image), row, column);
-                            flagCount++;
-                            flagNum.setText(Integer.toString(flagCount));
-
-                            field.removeFlag(row, column);
-                        }
-                    }*/
-                }
-            }
-        }
-    }
 
 
     /**
@@ -772,6 +713,8 @@ public class GameController {
 
         ((Node) actionEvent.getSource()).getScene().getWindow().hide();
 
+
+
         try {
             Stage stage = new Stage();
 
@@ -781,6 +724,9 @@ public class GameController {
             loader.load();
 
             Parent root = loader.getRoot();
+
+
+            templateTimer.shutdown();
 
             stage.setScene(new Scene(root));
             stage.show();

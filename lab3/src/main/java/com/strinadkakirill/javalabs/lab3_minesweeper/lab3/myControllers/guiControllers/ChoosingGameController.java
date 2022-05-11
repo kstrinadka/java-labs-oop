@@ -77,7 +77,7 @@ public class ChoosingGameController {
             Parent root = loader.getRoot();
 
             GameController gameController = loader.getController();
-            gameController.getDataForGame(9, 9, 10);
+            gameController.getDataForGame(9, 9, 10, stage);
 
             stage.setScene(new Scene(root));
             stage.show();
@@ -104,7 +104,7 @@ public class ChoosingGameController {
             Parent root = loader.getRoot();
 
             GameController gameController = loader.getController();
-            gameController.getDataForGame(16, 16, 40);
+            gameController.getDataForGame(16, 16, 40, stage);
 
             stage.setScene(new Scene(root));
             stage.show();
@@ -130,7 +130,7 @@ public class ChoosingGameController {
             Parent root = loader.getRoot();
 
             GameController gameController = loader.getController();
-            gameController.getDataForGame(30, 16, 99);
+            gameController.getDataForGame(30, 16, 99, stage);
 
             stage.setScene(new Scene(root));
             stage.show();
@@ -212,7 +212,7 @@ public class ChoosingGameController {
                 Parent root = loader.getRoot();
 
                 GameController gameController = loader.getController();
-                gameController.getDataForGame(fieldX, fieldY, mines);
+                gameController.getDataForGame(fieldX, fieldY, mines, stage);
 
                 stage.setScene(new Scene(root));
                 stage.show();
