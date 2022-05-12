@@ -461,13 +461,15 @@ public class Field {
         }
     }
 
-    public void victory(String time) {
 
+    public void victory() {
+        templateTimer.shutdown();
         //записать в статистику
         //остановить игру
     }
-    public void defeat() {
 
+    public void defeat() {
+        templateTimer.shutdown();
     }
 
 

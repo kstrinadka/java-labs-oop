@@ -295,7 +295,8 @@ public class GameController {
      * Больше нельзя взаимодействовать с полем
      */
     private void showDefeat () {
-        templateTimer.shutdown();
+        //templateTimer.shutdown();
+        field.defeat();
         timeLineChecker.stop();
         defeatCondition = true;
         loseText.setDisable(false);
@@ -304,7 +305,8 @@ public class GameController {
 
 
     private void showVictory() {
-        templateTimer.shutdown();
+       // templateTimer.shutdown();
+        field.victory();
         timeLineChecker.stop();
     }
 
