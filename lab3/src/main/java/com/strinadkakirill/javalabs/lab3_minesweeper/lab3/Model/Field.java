@@ -33,6 +33,9 @@ public class Field {
     private int correctFlagsOnMines;
 
 
+    //сколько еще клеток нужно открыть для победы
+    private int remainingAmountOfCellsToOpen;
+
     ArrayList<Cell> mainField = new ArrayList<>();
 
     public ArrayList<Cell> getMainField() {
@@ -49,6 +52,7 @@ public class Field {
 
         this.correctFlagsOnMines = numberOfMines;
         this.templateTimer = createTimerOnModelField();
+        this.remainingAmountOfCellsToOpen = this.heightOfField * this.widthOfField - numberOfMines;
     }
 
     public Field(int height, int width, int minesAmount) {
@@ -65,6 +69,7 @@ public class Field {
         setMines();
         setNumbersForWholeFieldAroundMines();
         this.templateTimer = createTimerOnModelField();
+        this.remainingAmountOfCellsToOpen = this.heightOfField * this.widthOfField - numberOfMines;
     }
 
 
@@ -440,6 +445,7 @@ public class Field {
 
         if (cell.cellHasMine()) {
             this.correctFlagsOnMines++;
+            System.out.println("this.correctFlagsOnMines++");
         }
     }
 
@@ -449,16 +455,25 @@ public class Field {
 
         if (cell.cellHasMine()) {
             this.correctFlagsOnMines--;
+            System.out.println("this.correctFlagsOnMines = " + this.correctFlagsOnMines);
+            System.out.println("this.remainingAmountOfCellsToOpen = " + this.remainingAmountOfCellsToOpen);
         }
     }
 
     public boolean checkVictory() {
-        if (correctFlagsOnMines == 0) {
+        if (this.remainingAmountOfCellsToOpen == 0 && correctFlagsOnMines == 0) {
+            System.out.println("Victory");
+            return true;
+        }
+        else return false;
+
+
+        /*if (correctFlagsOnMines == 0) {
             return true;
         }
         else {
             return false;
-        }
+        }*/
     }
 
 
@@ -478,6 +493,11 @@ public class Field {
      */
     public void openCell(Cell cell) {
         cell.openThisCell();
+
+        if (!cell.cellHasMine()) {
+            this.remainingAmountOfCellsToOpen--;
+        }
+
 
 
         if (cell.getCellNumber() == 0 && !cell.cellHasMine()) {

@@ -31,6 +31,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import javafx.util.Duration;
@@ -284,6 +285,10 @@ public class GameController {
         field.setFlag(modelcell);
         flagNum.setText(Integer.toString(field.getFlagsAmount()));
 
+        if (field.checkVictory()) {
+            showVictory();
+        }
+
         imageView.setImage(new Image(this.getClass().
                 getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/flaged.png")));
         imageView.setFitWidth(sizeOfCell);
@@ -301,6 +306,29 @@ public class GameController {
         defeatCondition = true;
         loseText.setDisable(false);
 
+        try {
+            Stage stage = new Stage();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("defeat.fxml"));
+
+            loader.load();
+
+            Parent root = loader.getRoot();
+
+            stage.setTitle("поражение");
+            stage.setMinWidth(400);
+            stage.setMinHeight(300);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node) fieldPane).getScene().getWindow());
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 
@@ -308,6 +336,30 @@ public class GameController {
        // templateTimer.shutdown();
         field.victory();
         timeLineChecker.stop();
+        showWholeField();
+        try {
+            Stage stage = new Stage();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("victory.fxml"));
+
+            loader.load();
+
+            Parent root = loader.getRoot();
+
+            stage.setTitle("победа");
+            stage.setMinWidth(400);
+            stage.setMinHeight(300);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node) fieldPane).getScene().getWindow());
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 
@@ -375,6 +427,10 @@ public class GameController {
             imageView.setImage(chooseRightImageToOpenCell(modelcell));
             imageView.setFitWidth(sizeOfCell);
             imageView.setFitHeight(sizeOfCell);
+
+            if (field.checkVictory()) {
+                showVictory();
+            }
         }
 
 
