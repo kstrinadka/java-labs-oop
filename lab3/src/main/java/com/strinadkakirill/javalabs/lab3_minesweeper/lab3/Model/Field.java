@@ -4,13 +4,10 @@ import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.Cell;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellConditions;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TemplateTimer;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TimerListener;
-import javafx.animation.Timeline;
 import javafx.application.Platform;
-
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.concurrent.Exchanger;
+
+
 
 public class Field {
 

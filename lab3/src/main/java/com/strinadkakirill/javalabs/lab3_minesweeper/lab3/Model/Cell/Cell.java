@@ -10,11 +10,7 @@ public class Cell {
     private int x_coordinate;
     private int y_coordinate;
 
-    //помечена ли флагом клетка
-    private boolean isFlagged;
 
-    //закрыта ли клетка
-    private boolean isClosed;
 
     //мб сделать enum для возможных состояний ячейки
     private CellConditions condition;
@@ -26,10 +22,10 @@ public class Cell {
 
 
     public Cell(CellConditions condition, boolean hasMine) {
-        this.condition = condition;
+        //this.condition = condition;
         this.hasMine = hasMine;
-        this.isClosed = true;
-        this.isFlagged = false;
+        this.condition = CellConditions.CLOSED;
+
     }
 
     public Cell() {
@@ -41,10 +37,9 @@ public class Cell {
     public Cell(int x_coordinate, int y_coordinate, CellConditions condition, boolean hasMine) {
         this.x_coordinate = x_coordinate;
         this.y_coordinate = y_coordinate;
-        this.condition = condition;
+        //this.condition = condition;
         this.hasMine = hasMine;
-        this.isClosed = true;
-        this.isFlagged = false;
+        this.condition = CellConditions.CLOSED;
     }
 
     public void plusOneToCell () {
@@ -106,9 +101,7 @@ public class Cell {
         if (this.condition.equals(CellConditions.CLOSED)) {
             return true;
         }
-        //else return false;
-
-        return isClosed;
+        else return false;
     }
 
     public CellConditions getState(){
@@ -118,22 +111,14 @@ public class Cell {
     public void openThisCell() {
         this.condition = CellConditions.OPENED;
 
-        this.isClosed = false;
     }
 
     public void setClosed() {
         this.condition = CellConditions.CLOSED;
 
-        this.isClosed = true;
     }
 
     public void changeFlagState() {
-        if (this.isFlagged == true) {
-            this.isFlagged = false;
-        }
-        else {
-            this.isFlagged = true;
-        }
 
         if (this.condition.equals(CellConditions.CLOSED)) {
             this.condition = CellConditions.FLAG;
@@ -144,15 +129,12 @@ public class Cell {
     }
 
     public boolean isFlagged() {
-
-        if (this.condition.equals(CellConditions.CLOSED)) {
-            return false;
-        }
-        else if (this.condition.equals(CellConditions.FLAG)) {
+        if (this.condition.equals(CellConditions.FLAG)) {
             return true;
         }
+        else
+            return false;
 
-        return this.isFlagged;
     }
 
     public void setFlag() {

@@ -229,18 +229,16 @@ public class GameController {
         Cell modelcell = field.getCell(y_coord, x_coord);
         ImageView imageView = cellOfGridPane.image();
 
-        if (modelcell.isClosed()) {
-            if (modelcell.isFlagged() == false && modelcell.getState().equals(CellConditions.CLOSED) &&
-                    field.getFlagsAmount() > 0) {
+        if (modelcell.getState().equals(CellConditions.CLOSED) &&
+                field.getFlagsAmount() > 0) {
 
-                setFlagGUI(modelcell, imageView);
-            }
+            setFlagGUI(modelcell, imageView);
+        }
 
-            else if (modelcell.isFlagged() == true && modelcell.getState().equals(CellConditions.FLAG) &&
-                    field.getFlagsAmount() < field.getNumberOfMines()) {
+        else if (modelcell.getState().equals(CellConditions.FLAG) &&
+                field.getFlagsAmount() < field.getNumberOfMines()) {
 
-                deleteFlagGUI(modelcell, imageView);
-            }
+            deleteFlagGUI(modelcell, imageView);
         }
 
 
