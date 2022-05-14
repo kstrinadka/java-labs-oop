@@ -6,7 +6,7 @@ import java.util.Objects;
 
 
 /**
- * Ячейка в GridPane (клетка на игровом поле)
+ * Ячейка в GridPane (клетка на игровом поле в GUI)
  */
 public final class CellOfGridPane {
     private final ImageView image;

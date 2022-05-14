@@ -2,7 +2,6 @@ package com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model;
 
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.Cell;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellConditions;
-import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellState;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TemplateTimer;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TimerListener;
 import javafx.animation.Timeline;
@@ -23,9 +22,7 @@ public class Field {
     private String timerString;
 
     private TemplateTimer templateTimer;
-    private Exchanger<String> exchanger;
 
-    private String time;
 
     private int flagsAmount;
 
@@ -36,11 +33,16 @@ public class Field {
     //сколько еще клеток нужно открыть для победы
     private int remainingAmountOfCellsToOpen;
 
+
+    /**
+     * Список, который хранит все поле
+     */
     ArrayList<Cell> mainField = new ArrayList<>();
 
-    public ArrayList<Cell> getMainField() {
+
+    /*public ArrayList<Cell> getMainField() {
         return mainField;
-    }
+    }*/
 
 
     public Field() {
@@ -104,12 +106,6 @@ public class Field {
     }
 
 
-    //вроде это не надо
-    public void setCell(int y_coord, int x_coord, boolean hasMine) {
-        Cell cell = new Cell(CellConditions.CLOSED, true);
-        this.mainField.set(y_coord*this.widthOfField + x_coord, cell);
-    }
-
 
     /**
      * установить мину в заданных координатах
@@ -120,30 +116,6 @@ public class Field {
         this.mainField.set(y_coord*this.widthOfField + x_coord, cell);
     }
 
-
-    // для обычных режимов кол-во мин опеределенное
-    //для кастомного режима можно выбирать кол-во мин
-    private int getNumberOfMines (String mode) {
-        if (mode.equals("Beginner")){
-            return 10;
-        }
-        if (mode.equals("Beginner")){
-            return 40;
-        }
-        if (mode.equals("Beginner")){
-            return 99;
-        }
-
-        //сделать, чтоб можно было выбрать, мб сюда уже должно кол-во поступать
-        if (mode.equals("Specific")){
-            return 10;
-        }
-
-
-        System.out.println("не прошли условия по кол-ву мин");
-        return 10;
-    }
-    //вроде это не нужно
 
 
     /**
@@ -200,13 +172,6 @@ public class Field {
     }
 
 
-    /**
-     * метод изменения состояния ячейки по индексу {x, y} на заданное состояние.
-     * @param cellState - состояние ячейки, которое мы установим в заданные координаты
-     */
-    void setCell(int x, int y, CellState cellState) {
-
-    }
 
 
     /**
@@ -461,19 +426,12 @@ public class Field {
     }
 
     public boolean checkVictory() {
-        if (this.remainingAmountOfCellsToOpen == 0 && correctFlagsOnMines == 0) {
+        if (this.remainingAmountOfCellsToOpen == 0 && correctFlagsOnMines <= 0) {
             System.out.println("Victory");
             return true;
         }
         else return false;
 
-
-        /*if (correctFlagsOnMines == 0) {
-            return true;
-        }
-        else {
-            return false;
-        }*/
     }
 
 
@@ -504,7 +462,6 @@ public class Field {
             openNearbyEmptyCells(cell);
         }
 
-        //if ()
 
     }
 

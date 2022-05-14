@@ -8,18 +8,14 @@ import java.util.concurrent.Exchanger;
 
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.Cell;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellConditions;
-import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellState;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Field;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TemplateTimer;
-import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TimerListener;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -89,20 +85,13 @@ public class GameController {
     private Label timerLabel;
 
 
-    private String timerString;
-
     @FXML
     private Text winText;
 
-    boolean defeatCondition = false;
-    boolean victoryCondition = false;
 
     int sizeOfCell = 25;
 
     private TemplateTimer templateTimer;
-    private Exchanger<String> exchanger;
-
-    private String time;
 
     Stage currentStage;
 
@@ -113,7 +102,6 @@ public class GameController {
     // Holds this controller's Stage
     private Stage thisStage;
 
-    private ChoosingGameController controller1;
 
 
     public void getDataForGame(int fieldX, int fieldY, int mineCount, Stage stage) {
@@ -132,10 +120,6 @@ public class GameController {
         timerLabel.setText(time);
     }
 
-    public void setTimer(TemplateTimer templateTimer) {
-        this.templateTimer = templateTimer;
-    }
-
 
 
     /**
@@ -148,9 +132,6 @@ public class GameController {
 
     private void createTimerOnFieldPane(Stage currentStage) {
         this.templateTimer = field.getTemplateTimerFromModel();
-
-        //setTimer(templateTimer);
-
 
         //возможно нужно убрать выключение времени в контроллере. Пусть оно будет в модели
         currentStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
@@ -186,8 +167,6 @@ public class GameController {
         }
 
 
-
-
         listOfCellsInFieldPane = new ArrayList<>();
 
         int numCols = fieldX ;
@@ -196,8 +175,6 @@ public class GameController {
         System.out.println("поле создано");
 
         fillTheField(numRows, numCols, mineCount,"nick", -1, -1);
-
-
 
 
         for (int i = 0 ; i < numCols ; i++) {
@@ -300,10 +277,9 @@ public class GameController {
      * Больше нельзя взаимодействовать с полем
      */
     private void showDefeat () {
-        //templateTimer.shutdown();
         field.defeat();
         timeLineChecker.stop();
-        defeatCondition = true;
+
         loseText.setDisable(false);
 
         try {
@@ -333,7 +309,6 @@ public class GameController {
 
 
     private void showVictory() {
-       // templateTimer.shutdown();
         field.victory();
         timeLineChecker.stop();
         showWholeField();
@@ -397,8 +372,6 @@ public class GameController {
         }
 
 
-
-
         return success;
     }
 
@@ -418,6 +391,7 @@ public class GameController {
             field.openCell(modelcell);
             //modelcell.openThisCell();
             if(modelcell.getCellNumber() == 0 && !modelcell.cellHasMine()) {
+
                 // если 0, то проверяем ближайшие клетки
                 checkWholeFieldAndDraw();
             }
@@ -449,17 +423,13 @@ public class GameController {
             Cell modelcell = field.getCell(y_coord, x_coord);
             if (modelcell.getState().equals(CellConditions.OPENED)) {
 
-                //modelcell.openThisCell();
-                ImageView imageView = cellOfGridPane.image();
 
+                ImageView imageView = cellOfGridPane.image();
                 imageView.setImage(chooseRightImageForConcreteCell(modelcell));
                 imageView.setFitWidth(sizeOfCell);
                 imageView.setFitHeight(sizeOfCell);
 
             }
-
-
-
         }
     }
 
@@ -620,10 +590,6 @@ public class GameController {
                 image = new Image(this.getClass().
                         getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/num8.png"));
             }
-            /*else {
-                System.out.println("smth wrong with modelcell.getCellNumber() at (" + modelcell.getX_coordinate() +
-                        ", " + modelcell.getY_coordinate() + "). Cells number is " + modelcell.getCellNumber());
-            }*/
 
         }
 
@@ -644,7 +610,6 @@ public class GameController {
         Integer colIndex = GridPane.getColumnIndex(source);
         Integer rowIndex = GridPane.getRowIndex(source);
         System.out.println("paneClickHandler");
-        //System.out.printf("Mouse entered cell [%d, %d]%n", colIndex.intValue(), rowIndex.intValue());
     }
 
 
@@ -653,12 +618,6 @@ public class GameController {
      */
     public void fillTheField(int fieldY, int fieldX, int mineCount, String nickName,
                              double heightDifference, double widthDifference) {
-        //this.fieldY = fieldY;
-        //this.fieldX = fieldX;
-        //this.mineCount = mineCount;
-        //this.nickName = nickName;
-
-        //nickNameLabel.setText(nickName);
 
         flagCount = mineCount;
         flagNum.setText(flagCount.toString());
@@ -675,12 +634,6 @@ public class GameController {
      * Создаем поле в GridPane: задаем его размеры и добавлем cell динамически
      */
     private void changeRowsColumnsAmount(double heightDifference, double widthDifference) {
-        /*if (heightDifference < 0) {
-            borderPane.setPrefHeight(borderPane.getPrefHeight() + Math.abs(heightDifference) + 50);
-        }
-        if (widthDifference < 0) {
-            borderPane.setPrefWidth(borderPane.getPrefWidth() + Math.abs(widthDifference) + 25);
-        }*/
         int sizeOfCell = 25;
 
 
@@ -702,7 +655,6 @@ public class GameController {
                 image.setFitWidth(sizeOfCell);
                 image.setFitHeight(sizeOfCell);
 
-                //image.setImage();
 
                 CellOfGridPane cellOfGridPane = new CellOfGridPane(image, x, y);
 
@@ -712,24 +664,8 @@ public class GameController {
             }
         }
 
-        /*fieldPane.setHgap(0);
-        fieldPane.setVgap(0);
-        fieldPane.setPadding(new Insets(0, 0, 0, 0));*/
-
     }
 
-
-    /**
-     * Достает нужную cell из GridPane
-     */
-    Node getNodeByCoordinate(Integer row, Integer column) {
-        for (Node node : fieldPane.getChildren()) {
-            if(GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column){
-                return node;
-            }
-        }
-        return null;
-    }
 
     /**
      * Открывает все поле для просмотра и закрывает

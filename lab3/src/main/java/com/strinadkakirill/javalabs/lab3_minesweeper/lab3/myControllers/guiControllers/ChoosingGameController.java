@@ -61,11 +61,6 @@ public class ChoosingGameController {
      */
     public void buttonBegginerAction(ActionEvent actionEvent) {
 
-        /*GameController gameController = new GameController(this, actionEvent);
-
-        // Show the new stage/window
-        gameController.showStage();*/
-
         ((Node) actionEvent.getSource()).getScene().getWindow().hide();
 
         try {
