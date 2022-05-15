@@ -29,6 +29,26 @@ public class MenuController {
     }
 
     public void buttonStatisticsAction(ActionEvent actionEvent) {
+
+        ((Node) actionEvent.getSource()).getScene().getWindow().hide();
+
+        try {
+            Stage stage = new Stage();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("statistics.fxml"));
+
+            loader.load();
+
+            Parent root = loader.getRoot();
+
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public void buttonPlayAction(ActionEvent actionEvent) {
