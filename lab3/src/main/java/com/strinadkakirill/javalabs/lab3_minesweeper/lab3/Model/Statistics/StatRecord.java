@@ -4,13 +4,7 @@ package com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Statistics;
 /**
  * Одна запись в таблице статистики
  */
-public class StatRecord {
-
-
-    /**
-     * Режим игры данной записи (вроде не нужно)
-     */
-    private  GameModes gameMode;
+public class StatRecord implements Comparable<StatRecord> {
 
 
     /**
@@ -25,22 +19,39 @@ public class StatRecord {
     private int timeSeconds;
 
 
-    /**
-     * 1), 2), 3), 4), 5)
-     */
-    private String placeInStatistic;
 
+    public StatRecord(String timeString) {
+        this.timeString = timeString;
 
+        this.timeSeconds = parseStringTimeToSeconds();
+    }
 
+    public int getTimeSeconds() {
+        return this.timeSeconds;
+    }
 
-    private int parseStringTimeToSeconds () {
+    public int parseStringTimeToSeconds () {
 
-        return 0;
+        String[] h1=this.timeString.split(":");
+
+        int minute=Integer.parseInt(h1[0]);
+        int second=Integer.parseInt(h1[1]);
+
+        int temp;
+        temp = second + (60 * minute);
+
+        System.out.println("seconds: " + temp);
+
+        return temp;
     }
 
     @Override
     public String toString() {
-        return  gameMode +
-                ", time: " + timeString + '\'';
+        return "time: " + timeString;
+    }
+
+    @Override
+    public int compareTo(StatRecord o) {
+        return Integer.compare(getTimeSeconds(), o.getTimeSeconds());
     }
 }

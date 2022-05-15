@@ -2,6 +2,8 @@ package com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model;
 
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.Cell;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellConditions;
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Statistics.GameModes;
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Statistics.Statistic;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TemplateTimer;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.myTimer.TimerListener;
 import javafx.application.Platform;
@@ -434,9 +436,21 @@ public class Field {
 
     public void victory() {
         templateTimer.shutdown();
+
+        //Записываем статистику игры
+        GameModes currentGameMode = Statistic.getGameMode(this.widthOfField, this.heightOfField, this.numberOfMines);
+        String currentStatisticFileName = Statistic.getCurrentStatisticFileName(currentGameMode);
+
+        Statistic statistic = new Statistic(currentStatisticFileName, currentGameMode);
+
+        statistic.addNewRecord(this.timerString);
         //записать в статистику
         //остановить игру
     }
+
+
+
+
 
     public void defeat() {
         templateTimer.shutdown();

@@ -2,9 +2,13 @@ package com.strinadkakirill.javalabs.lab3_minesweeper.lab3;
 
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Field;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Statistics.GameModes;
+import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Statistics.StatRecord;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Statistics.Statistic;
 
+
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 
@@ -21,12 +25,13 @@ public class Main {
         field.printMainField();*/
 
 
-        Statistic statistic = new Statistic();
+        Statistic statistic = new Statistic("beginner.txt", GameModes.BEGINNER);
 
 
-        statistic.doSomthing();
+        statistic.addNewRecord("00:52");
 
-        System.out.println(GameModes.BEGINNER +" " + GameModes.INTERMEDIATE);
+
+
 
 
 
