@@ -260,14 +260,16 @@ public class GameController {
         field.setFlag(modelcell);
         flagNum.setText(Integer.toString(field.getFlagsAmount()));
 
-        if (field.checkVictory()) {
-            showVictory();
-        }
+
 
         imageView.setImage(new Image(this.getClass().
                 getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/flaged.png")));
         imageView.setFitWidth(sizeOfCell);
         imageView.setFitHeight(sizeOfCell);
+
+        if (field.checkVictory()) {
+            showVictory();
+        }
     }
 
     /**

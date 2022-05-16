@@ -419,17 +419,20 @@ public class Field {
 
         if (cell.cellHasMine()) {
             this.correctFlagsOnMines--;
-            System.out.println("this.correctFlagsOnMines = " + this.correctFlagsOnMines);
-            System.out.println("this.remainingAmountOfCellsToOpen = " + this.remainingAmountOfCellsToOpen);
+            //System.out.println("this.correctFlagsOnMines = " + this.correctFlagsOnMines);
+            //System.out.println("this.remainingAmountOfCellsToOpen = " + this.remainingAmountOfCellsToOpen);
         }
     }
 
     public boolean checkVictory() {
-        if (this.remainingAmountOfCellsToOpen == 0 && correctFlagsOnMines <= 0) {
-            System.out.println("Victory");
+        //System.out.println("checking victory");
+
+        if (this.remainingAmountOfCellsToOpen <= 0 && this.correctFlagsOnMines <= 0) {
+            //System.out.println("Victory");
             return true;
         }
-        else return false;
+
+        return false;
 
     }
 
