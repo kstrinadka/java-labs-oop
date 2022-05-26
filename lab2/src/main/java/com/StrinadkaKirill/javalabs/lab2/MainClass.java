@@ -22,7 +22,6 @@ public class MainClass {
         final String OUTPUT_FILE_NAME;
 
 
-
         try {
             if (args.length == TWO_ARGUMENTS) {
                 logger.info("There are 2 args. Program starts with file input");
@@ -39,48 +38,36 @@ public class MainClass {
             } else {
                 throw new ArgsAmountException("bad number of args");
             }
-        } catch (ArgsAmountException exception) {
-            logger.error("Wrong amount of arguments given", exception);
-            //System.out.println(exception.getMessage());
-            return;
-        }
 
 
-        //here we are getting input from required reader
-        ArrayList<String> listOfInput = MyExecutor.createReader(INPUT_FILE_NAME);
-        try {
+            //here we are getting input from required reader
+            ArrayList<String> listOfInput = MyExecutor.createReader(INPUT_FILE_NAME);
             if (listOfInput == null) {
                 throw new IOException("smth wrong with input");
             }
+
+
+            //создается список Data из входящих данных
+            ArrayList<Data> dataArrayList;
+            dataArrayList = Data.createDataList(listOfInput);
+
+            MyExecutor executor = new MyExecutor(OUTPUT_FILE_NAME, dataArrayList);
+
+            //executing Calculator
+            executor.executeCalculator();
+
+
+        } catch (ArgsAmountException exception) {
+            logger.error("Wrong amount of arguments given", exception);
+            return;
         }
         catch (IOException e) {
             logger.error(e);
             return;
         }
-
-
-        //создается список Data из входящих данных
-        ArrayList<Data> dataArrayList;
-        try {
-            dataArrayList = Data.createDataList(listOfInput);
-        }
-        catch (IOException e) {
-            logger.error("can't create daraArrayList", e);
-            return;
-        }
-
-
-        MyExecutor executor = new MyExecutor(OUTPUT_FILE_NAME, dataArrayList);
-
-
-        //executing Calculator
-        try {
-            executor.executeCalculator();
-        }
         catch (Exception e) {
             logger.error("error in executing command", e);
         }
-
     }
 
 }

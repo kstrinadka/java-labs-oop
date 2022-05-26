@@ -85,8 +85,4 @@ public class MyContext {
     }
 
 
-    @Override
-    public String toString() {
-        return "MyContext{}";
-    }
 }

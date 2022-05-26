@@ -198,3 +198,38 @@ com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get ele
 2022-04-22 13:31:06 INFO  MainClass:19 - getting text from console reader
 2022-04-22 13:31:10 INFO  MainClass:168 - starting executing calculator
 2022-04-22 13:31:10 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 13:58:31 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 13:58:31 INFO  MainClass:19 - getting text from file reader
+2022-05-26 13:58:31 INFO  MainClass:168 - starting executing calculator
+2022-05-26 13:58:31 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 13:58:46 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 13:58:46 INFO  MainClass:19 - getting text from file reader
+2022-05-26 13:58:46 INFO  MainClass:168 - starting executing calculator
+2022-05-26 13:58:46 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 14:01:29 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 14:01:29 INFO  MainClass:19 - getting text from file reader
+2022-05-26 14:01:29 INFO  MainClass:168 - starting executing calculator
+2022-05-26 14:01:29 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 14:01:38 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 14:01:38 INFO  MainClass:19 - getting text from file reader
+2022-05-26 14:01:38 INFO  MainClass:168 - starting executing calculator
+2022-05-26 14:01:38 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 14:02:32 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 14:02:32 INFO  MainClass:19 - getting text from file reader
+2022-05-26 14:02:32 INFO  MainClass:168 - starting executing calculator
+2022-05-26 14:02:32 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 14:03:05 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 14:03:05 INFO  MainClass:19 - getting text from file reader
+2022-05-26 14:03:05 INFO  MainClass:168 - starting executing calculator
+2022-05-26 14:03:05 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-05-26 14:03:05 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
