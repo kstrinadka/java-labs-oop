@@ -17,7 +17,7 @@ public class MyReader {
         ArrayList<String> list = new ArrayList<>();
 
         final String pathToFIle =
-                String.format("out\\production\\lab1\\com\\StrinadkaKirill\\javalabs\\lab1\\%s", fileName);
+                String.format(fileName);
 
         File file = new File(pathToFIle);
         Scanner input = new Scanner(file);

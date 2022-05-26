@@ -53,24 +53,16 @@ public class MyWriter {
 
 
         final String pathToFIle =
-                String.format("out\\production\\lab1\\com\\StrinadkaKirill\\javalabs\\lab1\\%s", csvFileName);
+                String.format(csvFileName);
         BufferedWriter writer = new BufferedWriter(new FileWriter(pathToFIle));
 
         for (String str: resultForCSV) {
-            writer.write(str + "\n");
+            writer.write(str);
+            writer.newLine();
         }
 
         writer.close();
 
     }
-
-
-    public void testPrint () {
-
-        for (String str: resultForCSV){
-            System.out.println(str);
-        }
-    }
-
 
 }

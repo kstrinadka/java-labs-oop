@@ -22,45 +22,32 @@ public class MainClass {
             else {
                 throw new IllegalArgumentException("bad number of args");
             }
-        }
-        catch (IllegalArgumentException exception) {
-            System.out.println(exception.getMessage());
-            return;
-        }
 
+            ArrayList<String> list;
 
-
-        ArrayList<String> list;
-
-        try {
             list = MyReader.openAndReadFromFile(INPUT_FILE_NAME);
+
+
+            MyCounter counter = new MyCounter(list);
+
+            counter.printList();
+
+
+            MyWriter writer = new MyWriter(counter.getTotalWords(), counter.getWordsWithFrequencyList(),
+                    OUTPUT_FILE_NAME);
+
+
+            writer.printToCSV();
+
         }
         catch (FileNotFoundException exception){
             System.out.println(exception.getMessage());
-            return;
-        }
-
-
-        MyCounter counter = new MyCounter(list);
-
-        counter.printList();
-
-
-        MyWriter writer = new MyWriter(counter.getTotalWords(), counter.getWordsWithFrequencyList(),
-                OUTPUT_FILE_NAME);
-
-        writer.testPrint();
-
-        try {
-            writer.printToCSV();
         }
         catch (IOException exception) {
             System.out.println(exception.getMessage());
         }
-
-
-
+        catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
-
-
 }
