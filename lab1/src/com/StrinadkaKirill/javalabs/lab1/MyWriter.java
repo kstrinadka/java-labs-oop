@@ -35,7 +35,7 @@ public class MyWriter {
     private void formatData () {
 
         for (MyCounter.MyData str : sortedList) {
-            resultForCSV.add(str.toString() + "," + getRelativeFrequency(str.frequency()));
+            resultForCSV.add(str.getString() + Constants.DIVIDER + getRelativeFrequency(str.frequency()));
         }
     }
 
@@ -43,7 +43,7 @@ public class MyWriter {
     //return relative frequency for each word in our text
     private String getRelativeFrequency(int amount) {
 
-        double result = ((double)amount / (double) totalWords) * 100;
+        double result = ((double)amount / (double) totalWords) * Constants.ONE_HUNDRED_PERCENT;
 
         return String.valueOf(result);
     }

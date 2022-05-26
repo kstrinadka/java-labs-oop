@@ -38,7 +38,7 @@ public class MyCounter {
                 wordsWithFrequency.replace(word, value);
             }
             else {
-                wordsWithFrequency.put(word, 1);
+                wordsWithFrequency.put(word, Constants.FIRST_OCCURRENCE);
             }
         }
 
@@ -65,14 +65,21 @@ public class MyCounter {
         private final String word;
         private final Integer frequency;
 
+        private final String divider;
+
         private MyData(String word, int frequency) {
             this.word = word;
             this.frequency = frequency;
+            this.divider = Constants.DIVIDER;
         }
 
 
         public int frequency() {
             return frequency;
+        }
+
+        public String getString() {
+            return word + divider + frequency;
         }
 
         @Override
@@ -82,16 +89,6 @@ public class MyCounter {
             var that = (MyData) obj;
             return this.word.equals(that.word) &&
                     this.frequency.equals(that.frequency) ;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(word, frequency);
-        }
-
-        @Override
-        public String toString() {
-            return word + "," + frequency;
         }
 
         @Override

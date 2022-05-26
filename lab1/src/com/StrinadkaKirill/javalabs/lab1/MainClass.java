@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class mainClass {
+public class MainClass {
 
 
     public static void main(String[] args) {
@@ -15,9 +15,9 @@ public class mainClass {
         final String OUTPUT_FILE_NAME;
 
         try {
-            if (args.length == 2) {
-                INPUT_FILE_NAME = args[0];
-                OUTPUT_FILE_NAME = args[1];
+            if (args.length == Constants.TWO_ARGUMENTS) {
+                INPUT_FILE_NAME = args[Constants.FIRST_ARGUMENT];
+                OUTPUT_FILE_NAME = args[Constants.SECOND_ARGUMENT];
             }
             else {
                 throw new IllegalArgumentException("bad number of args");
