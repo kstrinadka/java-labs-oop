@@ -233,3 +233,7 @@ com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get ele
 	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
 	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
 	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-05-26 14:04:52 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 14:04:52 INFO  MainClass:19 - getting text from file reader
+2022-05-26 14:04:52 INFO  MainClass:168 - starting executing calculator
+2022-05-26 14:04:52 INFO  MainClass:185 - stop executing calculator and writing result
