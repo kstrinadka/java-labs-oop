@@ -26,6 +26,9 @@ public class MenuController {
     }
 
     public void buttonQuitAction(ActionEvent actionEvent) {
+
+        ((Node) actionEvent.getSource()).getScene().getWindow().hide();
+
     }
 
     public void buttonStatisticsAction(ActionEvent actionEvent) {

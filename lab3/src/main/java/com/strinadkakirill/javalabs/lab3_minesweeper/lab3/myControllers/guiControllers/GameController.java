@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.concurrent.Exchanger;
+
 
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.Cell;
 import com.strinadkakirill.javalabs.lab3_minesweeper.lab3.Model.Cell.CellConditions;
@@ -24,7 +24,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -35,14 +34,10 @@ import javafx.util.Duration;
 public class GameController {
 
     public AnchorPane rootElementGame;
-    @FXML
-    private ResourceBundle resources;
 
     @FXML
     private Label flagNum;
 
-    @FXML
-    private URL location;
 
     Timeline timeLineChecker;
 
@@ -73,7 +68,7 @@ public class GameController {
 
 
     @FXML
-    private ImageView imageView00;
+    private ImageView imageView;
 
     @FXML
     private Text loseText;
@@ -111,7 +106,6 @@ public class GameController {
         this.mineCount = mineCount;
         System.out.println("данные приняты");
         fieldPane.getChildren().clear();
-        //fieldPane = new GridPane();
         this.initialize();
     }
 
@@ -147,7 +141,6 @@ public class GameController {
 
                             @Override
                             public void handle(ActionEvent event) {
-                                //System.out.println("this is called every 1 seconds on UI thread");
                                 setTimerLabel(field.getTimerString());
 
                             }
@@ -195,25 +188,22 @@ public class GameController {
         //Устанавливается Listener на клетку
         Pane pane = new Pane();
         pane.setOnMouseEntered(e -> {
-            //System.out.printf("Mouse enetered cell [%d, %d]%n", colIndex, rowIndex);
+
         });
         pane.setOnMouseClicked(event -> {
             if (event.getButton() == MouseButton.PRIMARY) {
                 //openTheCell(row, column);
-                System.out.printf("Mouse left click cell [%d, %d]%n", colIndex, rowIndex);
                 if (fieldIsShown == false) {
                     tryToOpenTheCell(rowIndex, colIndex);
                 }
             }
             if (event.getButton() == MouseButton.SECONDARY) {
-                System.out.printf("Mouse right click cell [%d, %d]%n", colIndex, rowIndex);
                 flagTheCell(rowIndex, colIndex);
             }
 
         });
 
         fieldPane.add(pane, colIndex, rowIndex);
-        //System.out.println("added pane for (" + colIndex + ", " + rowIndex + ") " );
     }
 
 
@@ -363,7 +353,6 @@ public class GameController {
 
                 imageView.setImage(new Image(this.getClass().
                         getResourceAsStream("/com/strinadkakirill/javalabs/lab3_minesweeper/lab3/img/bombed.png")));
-                System.out.println("поставилась картинка взорванной мины");
                 imageView.setFitWidth(sizeOfCell);
                 imageView.setFitHeight(sizeOfCell);
 
@@ -389,7 +378,6 @@ public class GameController {
 
         if (!modelcell.isFlagged()) {
             field.openCell(modelcell);
-            //modelcell.openThisCell();
             if(modelcell.getCellNumber() == 0 && !modelcell.cellHasMine()) {
 
                 // если 0, то проверяем ближайшие клетки
@@ -601,15 +589,6 @@ public class GameController {
         }
 
         return image;
-    }
-
-
-    @FXML
-    private void paneClickHandler(MouseEvent e) {
-        Node source = (Node)e.getSource() ;
-        Integer colIndex = GridPane.getColumnIndex(source);
-        Integer rowIndex = GridPane.getRowIndex(source);
-        System.out.println("paneClickHandler");
     }
 
 
