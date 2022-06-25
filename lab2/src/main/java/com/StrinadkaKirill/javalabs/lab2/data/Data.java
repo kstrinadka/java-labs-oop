@@ -55,7 +55,7 @@ public class Data {
 
     private ArrayList<String> converteStringToList(String str) {
 
-        String[] strSplit = str.split("\\W+");
+        String[] strSplit = str.split("[^a-zA-Z0-9_.]+");
         ArrayList<String> arguments = new ArrayList<>(Arrays.asList(strSplit));
 
         if (arguments.size() > 1) {

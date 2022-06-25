@@ -8,9 +8,7 @@ import java.util.ArrayList;
  */
 public abstract class MyAbstractReader {
 
-
     final String fileName;
-
 
     public MyAbstractReader(String fileName) {
         this.fileName = fileName;
