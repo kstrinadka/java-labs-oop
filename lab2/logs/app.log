@@ -1,0 +1,1009 @@
+2022-04-13 21:35:49 INFO  MainClass:26 - There are 2 args. Program starts with file input
+2022-04-13 21:37:07 INFO  MainClass:26 - There are 2 args. Program starts with file input
+2022-04-13 21:37:07 INFO  MainClass:160 - starting executing calculator
+2022-04-21 17:47:03 INFO  MainClass:26 - There are 2 args. Program starts with file input
+2022-04-21 17:47:03 INFO  MainClass:156 - starting executing calculator
+2022-04-21 17:47:03 INFO  MainClass:172 - stop executing calculator and writing result
+2022-04-21 18:46:54 INFO  MainClass:26 - There are 2 args. Program starts with file input
+2022-04-21 18:46:54 INFO  MainClass:156 - starting executing calculator
+2022-04-21 19:19:33 INFO  MainClass:172 - stop executing calculator and writing result
+2022-04-21 20:39:00 INFO  MainClass:156 - starting executing calculator
+2022-04-21 20:39:00 INFO  MainClass:172 - stop executing calculator and writing result
+2022-04-21 20:44:05 INFO  MainClass:156 - starting executing calculator
+2022-04-21 20:44:57 INFO  MainClass:156 - starting executing calculator
+2022-04-21 20:48:41 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:00:25 INFO  MainClass:32 - There are no args. Program starts with console input
+2022-04-21 21:00:47 INFO  MainClass:26 - There are 2 args. Program starts with file input
+2022-04-21 21:00:47 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:00:47 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:01:08 INFO  MainClass:26 - There are 2 args. Program starts with file input
+2022-04-21 21:01:08 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:01:08 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:01:48 INFO  MainClass:32 - There are no args. Program starts with console input
+2022-04-21 21:01:51 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:01:51 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:09:39 INFO  MainClass:32 - There are no args. Program starts with console input
+2022-04-21 21:09:47 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:09:47 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:10:18 INFO  MainClass:32 - There are no args. Program starts with console input
+2022-04-21 21:10:20 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:10:20 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:10:37 INFO  MainClass:32 - There are no args. Program starts with console input
+2022-04-21 21:10:40 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:10:40 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:10:47 INFO  MainClass:32 - There are no args. Program starts with console input
+2022-04-21 21:10:50 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:10:50 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:11:21 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:11:21 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:11:38 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:12:28 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:12:28 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:12:46 INFO  MainClass:32 - There are no args. Program starts with console input
+2022-04-21 21:12:49 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:12:49 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:14:00 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:14:00 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:15:22 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:15:22 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:19:08 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:19:08 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:20:44 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:20:44 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:21:02 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:21:02 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:21:14 INFO  MainClass:32 - There are no args. Program starts with console input
+2022-04-21 21:21:17 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:21:17 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 21:21:36 INFO  MainClass:26 - There are 2 args. Program starts with file input
+2022-04-21 21:21:36 INFO  MainClass:156 - starting executing calculator
+2022-04-21 21:21:36 INFO  MainClass:173 - stop executing calculator and writing result
+2022-04-21 22:33:41 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:33:41 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:86)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:28)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:86)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:22)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:55)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:42)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:42)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:42)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 INFO  MainClass:192 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:42)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:189)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:33:41 ERROR MainClass:82 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:55)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:197)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:79)
+2022-04-21 22:36:00 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-04-21 22:36:00 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:36:00 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:36:29 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:36:29 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:36:29 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:37:23 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:37:23 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:37:23 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:37:33 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:37:33 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:37:33 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:38:25 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:38:25 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:38:25 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:38:48 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:38:48 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:38:48 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:40:06 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:40:06 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:40:06 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:40:45 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:40:45 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:40:45 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:40:57 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:40:57 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:40:57 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:41:04 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:41:04 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:41:04 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:42:24 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:42:24 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:42:24 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:43:29 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:43:29 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:43:29 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:43:51 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:43:51 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:43:51 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:44:56 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:44:56 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:44:56 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:45:18 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:45:18 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:45:18 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:45:39 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:45:39 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:45:39 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:46:52 INFO  MainClass:35 - There are no args. Program starts with console input
+2022-04-21 22:47:00 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:47:00 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:49:17 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:49:17 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:49:17 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:49:49 INFO  MainClass:35 - There are no args. Program starts with console input
+2022-04-21 22:49:58 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:49:58 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:54:18 INFO  MainClass:35 - There are no args. Program starts with console input
+2022-04-21 22:54:43 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:54:43 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:54:43 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-21 22:54:51 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-21 22:54:51 INFO  MainClass:182 - starting executing calculator
+2022-04-21 22:54:51 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-22 13:04:09 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-22 13:04:10 INFO  MainClass:182 - starting executing calculator
+2022-04-22 13:04:10 INFO  MainClass:199 - stop executing calculator and writing result
+2022-04-22 13:14:29 INFO  MainClass:29 - There are 2 args. Program starts with file input
+2022-04-22 13:14:29 INFO  MainClass:171 - starting executing calculator
+2022-04-22 13:14:29 INFO  MainClass:188 - stop executing calculator and writing result
+2022-04-22 13:16:38 INFO  MainClass:171 - starting executing calculator
+2022-04-22 13:16:38 INFO  MainClass:188 - stop executing calculator and writing result
+2022-04-22 13:18:11 INFO  MainClass:171 - starting executing calculator
+2022-04-22 13:18:11 INFO  MainClass:188 - stop executing calculator and writing result
+2022-04-22 13:25:43 INFO  MainClass:168 - starting executing calculator
+2022-04-22 13:25:43 INFO  MainClass:185 - stop executing calculator and writing result
+2022-04-22 13:26:03 INFO  MainClass:168 - starting executing calculator
+2022-04-22 13:26:03 INFO  MainClass:185 - stop executing calculator and writing result
+2022-04-22 13:26:10 INFO  MainClass:28 - There are 2 args. Program starts with file input
+2022-04-22 13:26:10 INFO  MainClass:168 - starting executing calculator
+2022-04-22 13:26:10 INFO  MainClass:185 - stop executing calculator and writing result
+2022-04-22 13:30:08 INFO  MainClass:28 - There are 2 args. Program starts with file input
+2022-04-22 13:30:08 INFO  MainClass:19 - getting text from file reader
+2022-04-22 13:30:08 INFO  MainClass:168 - starting executing calculator
+2022-04-22 13:30:08 INFO  MainClass:185 - stop executing calculator and writing result
+2022-04-22 13:31:06 INFO  MainClass:34 - There are no args. Program starts with console input
+2022-04-22 13:31:06 INFO  MainClass:19 - getting text from console reader
+2022-04-22 13:31:10 INFO  MainClass:168 - starting executing calculator
+2022-04-22 13:31:10 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 13:58:31 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 13:58:31 INFO  MainClass:19 - getting text from file reader
+2022-05-26 13:58:31 INFO  MainClass:168 - starting executing calculator
+2022-05-26 13:58:31 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 13:58:46 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 13:58:46 INFO  MainClass:19 - getting text from file reader
+2022-05-26 13:58:46 INFO  MainClass:168 - starting executing calculator
+2022-05-26 13:58:46 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 14:01:29 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 14:01:29 INFO  MainClass:19 - getting text from file reader
+2022-05-26 14:01:29 INFO  MainClass:168 - starting executing calculator
+2022-05-26 14:01:29 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 14:01:38 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 14:01:38 INFO  MainClass:19 - getting text from file reader
+2022-05-26 14:01:38 INFO  MainClass:168 - starting executing calculator
+2022-05-26 14:01:38 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 14:02:32 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 14:02:32 INFO  MainClass:19 - getting text from file reader
+2022-05-26 14:02:32 INFO  MainClass:168 - starting executing calculator
+2022-05-26 14:02:32 INFO  MainClass:185 - stop executing calculator and writing result
+2022-05-26 14:03:05 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 14:03:05 INFO  MainClass:19 - getting text from file reader
+2022-05-26 14:03:05 INFO  MainClass:168 - starting executing calculator
+2022-05-26 14:03:05 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-05-26 14:03:05 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-05-26 14:04:52 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-05-26 14:04:52 INFO  MainClass:19 - getting text from file reader
+2022-05-26 14:04:52 INFO  MainClass:168 - starting executing calculator
+2022-05-26 14:04:52 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 19:43:00 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 19:43:00 INFO  MainClass:19 - getting text from file reader
+2022-06-25 19:43:00 INFO  MainClass:168 - starting executing calculator
+2022-06-25 19:43:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:43:00 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:43:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:43:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:43:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:43:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:43:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:43:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:43:00 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:47:05 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 19:47:05 INFO  MainClass:19 - getting text from file reader
+2022-06-25 19:47:05 INFO  MainClass:168 - starting executing calculator
+2022-06-25 19:47:49 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:47:49 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:47:49 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:47:49 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:47:49 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:47:49 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:47:49 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:47:49 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:47:49 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:48:00 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 19:48:00 INFO  MainClass:19 - getting text from file reader
+2022-06-25 19:48:00 INFO  MainClass:168 - starting executing calculator
+2022-06-25 19:48:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:48:00 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:48:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:48:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:48:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:48:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:48:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:48:00 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:48:00 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:48:35 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 19:48:35 INFO  MainClass:19 - getting text from file reader
+2022-06-25 19:48:35 INFO  MainClass:168 - starting executing calculator
+2022-06-25 19:49:13 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:13 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:13 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:13 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:13 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:13 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:13 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:13 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:13 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:15 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 19:49:15 INFO  MainClass:19 - getting text from file reader
+2022-06-25 19:49:15 INFO  MainClass:168 - starting executing calculator
+2022-06-25 19:49:15 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: bad number of args in PushCommand
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PushCommand.doOperation(PushCommand.java:17)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:15 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: bad number of args in PushCommand
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PushCommand.doOperation(PushCommand.java:17)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:15 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:19)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:15 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:26 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 19:49:26 INFO  MainClass:19 - getting text from file reader
+2022-06-25 19:49:26 INFO  MainClass:168 - starting executing calculator
+2022-06-25 19:49:35 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: bad number of args in PushCommand
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PushCommand.doOperation(PushCommand.java:17)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:35 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: bad number of args in PushCommand
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PushCommand.doOperation(PushCommand.java:17)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:35 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:19)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:49:35 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:50:40 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 19:50:40 INFO  MainClass:19 - getting text from file reader
+2022-06-25 19:50:40 INFO  MainClass:168 - starting executing calculator
+2022-06-25 19:50:40 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:28)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:50:40 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:50:40 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:50:40 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:50:40 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:50:40 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:50:40 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:50:40 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:50:40 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 19:50:47 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 19:50:47 INFO  MainClass:19 - getting text from file reader
+2022-06-25 19:50:47 INFO  MainClass:168 - starting executing calculator
+2022-06-25 19:50:47 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:05:12 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:05:12 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:05:12 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:05:12 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:12 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:12 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:12 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:12 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:12 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:12 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:12 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:12 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:21 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:05:21 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:05:42 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:05:42 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:42 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:42 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:42 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:42 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:42 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:42 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:42 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:42 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:05:59 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:05:59 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:25:59 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:25:59 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:25:59 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:25:59 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:25:59 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:25:59 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:25:59 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:25:59 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:25:59 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:25:59 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:02 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:26:02 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:26:02 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:26:02 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:02 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:02 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:02 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:02 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:02 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:02 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:02 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:02 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:13 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:26:13 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:26:35 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:26:35 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:35 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:35 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:35 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:35 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:35 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:35 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:35 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:35 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:38 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:26:38 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:26:38 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:26:38 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:38 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:38 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:38 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:38 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:38 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:38 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:38 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:38 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:26:44 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:26:44 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:28:37 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:28:37 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.ArgsAmountException: pop
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DefineCommand.doOperation(DefineCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:28:37 INFO  MainClass:178 - error in command 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "java.util.TreeMap.get(Object)" is null
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.getDefine(MyContext.java:77)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.AbstractCommand.checkNumerOrVariable(AbstractCommand.java:60)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SqrtCommand.doOperation(SqrtCommand.java:23)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:28:37 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PrintCommand.doOperation(PrintCommand.java:14)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:28:37 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:28:37 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.SubCommand.doOperation(SubCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:28:37 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:28:37 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.DivideCommand.doOperation(DivideCommand.java:21)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:28:37 INFO  MainClass:178 - error in command 
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.pop(MyContext.java:37)
+	at com.StrinadkaKirill.javalabs.lab2.myCommand.PlusCommand.doOperation(PlusCommand.java:20)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:175)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:28:37 ERROR MainClass:69 - error in executing command
+com.StrinadkaKirill.javalabs.lab2.myExceptions.StackException: trying to get element from empty stack
+	at com.StrinadkaKirill.javalabs.lab2.MyContext.peekTop(MyContext.java:50)
+	at com.StrinadkaKirill.javalabs.lab2.MyExecutor.executeCalculator(MyExecutor.java:183)
+	at com.StrinadkaKirill.javalabs.lab2.MainClass.main(MainClass.java:57)
+2022-06-25 20:28:42 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:28:42 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:28:52 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:28:52 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:28:57 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:28:57 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:28:57 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:28:57 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:29:25 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:29:25 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:29:25 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:29:25 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:29:51 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:29:51 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:29:51 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:29:51 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:30:50 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:30:50 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:30:50 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:30:50 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:31:01 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:31:01 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:31:01 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:31:01 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:31:09 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:31:09 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:31:09 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:31:09 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:31:14 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:31:14 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:31:14 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:31:14 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:31:33 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:31:33 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:31:33 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:31:33 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:38:46 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:38:46 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:38:46 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:38:46 INFO  MainClass:185 - stop executing calculator and writing result
+2022-06-25 20:39:01 INFO  MainClass:27 - There are 2 args. Program starts with file input
+2022-06-25 20:39:01 INFO  MainClass:19 - getting text from file reader
+2022-06-25 20:39:01 INFO  MainClass:168 - starting executing calculator
+2022-06-25 20:39:01 INFO  MainClass:185 - stop executing calculator and writing result
